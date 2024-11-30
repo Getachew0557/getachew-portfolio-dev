@@ -8,6 +8,7 @@ export default function Navbar() {
         {name: 'Experience', link:'#experience'},
         {name: 'Language', link:'#language'},
         {name: 'Projects', link:'#projects'},
+        { name: 'Medium', link: '#blog' }, 
     ];
   return (
     <header data-aos='fade-up' className='text-gray-600 body-font z-10'>

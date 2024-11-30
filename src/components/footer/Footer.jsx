@@ -8,6 +8,7 @@ export default function Footer() {
         {name: 'Experience', link:'#experience'},
         {name: 'Language', link:'#language'},
         {name: 'Projects', link:'#projects'},
+        { name: 'Medium', link: '#blog' }
         
     ];
   return (
