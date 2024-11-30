@@ -3,7 +3,7 @@ import aboutImage from '../../assets/img.png'; // Change this path to your actua
 
 export default function About() {
     return (
-      <section id="about" className="relative overflow-hidden flex flex-col text-white body-font bg-gray-900">
+      <section id="about" className="relative overflow-hidden flex flex-col text-white body-font bg-gray-1200">
         <div className="container flex flex-col items-center mx-auto px-5 py-24">
           {/* Central Title */}
           <h1
