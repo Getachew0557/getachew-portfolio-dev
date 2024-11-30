@@ -10,6 +10,7 @@ import Projects from './components/projects/Projects';
 import Blog from './components/blog/Blog'
 import Contact from './components/contact/Contact';
 import Footer from './components/footer/Footer';
+import Education from './education/Education'
 
 export default function App() {
   useEffect(()=>{
@@ -23,6 +24,7 @@ export default function App() {
     <About/>
     <Skills />
     <Experience />
+    <Education/>
     <Language />
     <Projects />
     <Blog/>

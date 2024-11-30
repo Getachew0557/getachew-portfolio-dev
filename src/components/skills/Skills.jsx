@@ -50,7 +50,7 @@ export default function Skills() {
   };
 
   return (
-    <section id="skills" className="relative overflow-hidden flex flex-col text-white body-font bg-gray-900 py-24 px-6 sm:px-12">
+    <section id="skills" className="relative overflow-hidden flex flex-col text-white body-font bg-gray-1200 py-24 px-6 sm:px-12">
       <div className="container mx-auto flex flex-col items-center">
         {/* Section Title */}
         <h1

@@ -6,6 +6,7 @@ export default function Navbar() {
         {name: 'About', link:'#about'},
         {name: 'Skills', link:'#skills'},
         {name: 'Experience', link:'#experience'},
+        {name: 'education', link:'#education'},
         {name: 'Language', link:'#language'},
         {name: 'Projects', link:'#projects'},
         { name: 'Medium', link: '#blog' }, 

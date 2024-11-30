@@ -24,7 +24,7 @@ export default function Blog() {
   ];
 
   return (
-    <section id="blog" className="text-gray-600 body-font bg-gray-900 py-24 px-6 sm:px-12">
+    <section id="blog" className="text-gray-600 body-font bg-gray-1200 py-24 px-6 sm:px-12">
       <div className="container mx-auto text-center">
         <h1 className="sm:text-4xl text-3xl font-bold title-font text-orange-400 mb-12">
           Blog
