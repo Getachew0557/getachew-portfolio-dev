@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../navbar/Navbar';
 import hi from '../../assets/hi.png';
-import img from '../../assets/img.png';
+import img from '../../assets/hero.jpg';
 
 export default function Hero() {
   const [text, setText] = useState('');
