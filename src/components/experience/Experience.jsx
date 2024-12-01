@@ -25,11 +25,11 @@ export default function Experience() {
             </div>
 
             {/* Text and Experience Details */}
-            <div data-aos='fade-left' data-aos-delay='400' className='lg:flex-grow md:w-1/2 flex flex-col md:items-start md:text-left items-center text-center'>
+            <div data-aos='fade-left' data-aos-delay='400' className='lg:flex-grow md:w-1/2 flex flex-col md:items-start md:text-left items-center text-center px-28'>
                 {/* Container for Image and Text to Align the Line */}
                 <div className="flex items-start justify-start w-full relative">
                     {/* Vertical Line Divider (Full Height, ends slightly below last text) */}
-                    <div className="absolute left-[-8%] h-[calc(100%+24px)] w-px bg-gray-400"></div>
+                    <div className="absolute left-[-11%] h-[calc(100%+24px)] w-px bg-gray-400"></div>
 
                     {/* Text Section */}
                     <div className='lg:flex-grow md:w-1/2 flex flex-col md:items-start md:text-left items-center text-center'>

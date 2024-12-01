@@ -10,7 +10,7 @@ import Projects from './components/projects/Projects';
 import Blog from './components/blog/Blog'
 import Contact from './components/contact/Contact';
 import Footer from './components/footer/Footer';
-import Education from './education/Education'
+import Education from './components/education/Education'
 
 export default function App() {
   useEffect(()=>{

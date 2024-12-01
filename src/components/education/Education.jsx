@@ -1,5 +1,14 @@
 import React, { useState } from "react";
 import { FaGraduationCap, FaCertificate } from "react-icons/fa";
+import courseraLogo from "../../assets/coursera_logo.png";
+import alxLogo from "../../assets/alx.png";
+import ibmLogo from "../../assets/IBM.png";
+import ciscoLogo from "../../assets/cisco.jpg";
+import googleLogo from "../../assets/google_logo.png";
+import authorLogo from "../../assets/Author.png";
+import udacityLogo from "../../assets/udacity.png"
+
+import fortinetLogo from "../../assets/fortinet.png";
 
 export default function Education() {
   const [activeTab, setActiveTab] = useState("Education");
@@ -30,20 +39,57 @@ export default function Education() {
 
   const certificationData = [
     {
-      name: "AWS Certified Solutions Architect",
-      logo: "aws-logo.png", // Replace with the actual path to your logo
-      link: "https://www.aws.amazon.com/certification/",
+      name: "Machine Learning Certified",
+      institution: "Stamford Online",
+      logo: courseraLogo, 
+      link: "https://drive.google.com/file/d/1YGIw7KRlEHeDhag50Ict47f_WA2y1UuE/view",
     },
     {
-      name: "Certified Kubernetes Administrator",
-      logo: "kubernetes-logo.png", // Replace with the actual path to your logo
-      link: "https://www.cncf.io/certification/cka/",
+      name: "Certified AI Career Essential",
+      institution: "ALX",
+      logo: alxLogo, 
+      link: "https://drive.google.com/file/d/1x98T7hU1hakSxPw5JuqzSpjAZEny4Kb5/view",
     },
     {
-      name: "React Developer Certification",
-      logo: "react-logo.png", // Replace with the actual path to your logo
-      link: "https://reactjs.org/",
+      name: "Artificial Intellligence Certification",
+      institution: "IBM",
+      logo: ibmLogo, 
+      link: "https://www.credly.com/badges/3ac35dc1-8fd0-4a2f-9fed-0298982a7c30",
     },
+    {
+      name: "Data Analysis Fundamental",
+      institution: "Udacity",
+      logo: udacityLogo, 
+      link: "https://www.udacity.com/certificate/e/c799bb20-4a9b-11ef-abb6-fb4251be614c",
+    },
+
+    {
+      name: "Android Developer Nanodegree",
+      institution: "Udacity",
+      logo: udacityLogo, 
+      link: "https://www.udacity.com/certificate/e/230a58ec-97be-11ef-b7d5-37a75f522899",
+    },
+
+    {
+      name: "Author Certification",
+      institution: "International Journal of Innovative Science and Research Technology (IJISRT)",
+      logo: authorLogo, 
+      link: "https://drive.google.com/file/d/16vnw45yxywnXsJL9etgyI2TA0jsztaTs/view",
+    },
+    {
+      name: "The Fundamentals of Digital Marketing",
+      institution: "Google Digital Guarage",
+      logo: googleLogo, 
+      link: "https://drive.google.com/file/d/1ayg8kTdc6SrgVWm0zuYHyIXf4gclFNrE/view",
+    },
+
+    {
+      name: "Computer Networking",
+      institution:"CISCO",
+      logo: ciscoLogo, 
+      link: "https://www.credly.com/badges/70802195-a2dd-42f8-a156-8236609378d3",
+    },
+
   ];
 
   return (
@@ -146,23 +192,28 @@ export default function Education() {
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
-            {certificationData.map((cert, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-center"
-                data-aos="fade-up"
-                data-aos-delay={index * 100}
-              >
-                <a href={cert.link} target="_blank" rel="noopener noreferrer">
-                  <img
-                    src={cert.logo}
-                    alt={cert.name}
-                    className="w-20 h-20 object-contain mb-4"
-                  />
-                </a>
-                <h3 className="text-lg font-medium text-gray-300 text-center">{cert.name}</h3>
-              </div>
-            ))}
+{certificationData.map((cert, index) => (
+  <div
+    key={index}
+    className="flex flex-col items-center h-full border-2 border-orange-400 shadow-[0_0_15px_rgba(255,165,0,0.7)] border-opacity-60 rounded-lg overflow-hidden"
+    data-aos="fade-up"
+    data-aos-delay={index * 100}
+  >
+    <a href={cert.link} target="_blank" rel="noopener noreferrer">
+      <img
+        src={cert.logo}
+        alt={cert.name}
+        inst={cert.institution}
+        className="w-20 h-20 object-contain mb-4"
+      />
+    </a>
+    <h3 className="text-lg font-medium text-gray-300 text-center">
+        {cert.name} <br />
+        <span className="text-sm text-gray-400">{cert.institution}</span>
+    </h3>
+  </div>
+))}
+
           </div>
         )}
       </div>
