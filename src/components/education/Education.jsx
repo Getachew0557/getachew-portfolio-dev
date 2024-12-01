@@ -5,7 +5,7 @@ import alxLogo from "../../assets/alx.png";
 import ibmLogo from "../../assets/IBM.png";
 import ciscoLogo from "../../assets/cisco.jpg";
 import googleLogo from "../../assets/google_logo.png";
-import authorLogo from "../../assets/Author.png";
+import authorLogo from "../../assets/author.png";
 import udacityLogo from "../../assets/udacity.png"
 
 import fortinetLogo from "../../assets/fortinet.png";
