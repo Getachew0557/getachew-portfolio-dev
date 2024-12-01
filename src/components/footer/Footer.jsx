@@ -6,10 +6,10 @@ export default function Footer() {
         {name: 'about', link:'#about'},
         {name: 'Skills', link:'#skills'},
         {name: 'Experience', link:'#experience'},
-        {name: 'education', link:'#education'},
+        {name: 'Education', link:'#education'},
         {name: 'Language', link:'#language'},
         {name: 'Projects', link:'#projects'},
-        { name: 'Medium', link: '#blog' }
+        { name: 'Blog', link: '#blog' }
         
     ];
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import aboutImage from '../../assets/img.png'; // Change this path to your actual image
+import aboutImage from '../../assets/icon.png'; // Change this path to your actual image
 
 export default function About() {
     return (

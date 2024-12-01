@@ -6,10 +6,10 @@ export default function Navbar() {
         {name: 'About', link:'#about'},
         {name: 'Skills', link:'#skills'},
         {name: 'Experience', link:'#experience'},
-        {name: 'education', link:'#education'},
+        {name: 'Education', link:'#education'},
         {name: 'Language', link:'#language'},
         {name: 'Projects', link:'#projects'},
-        { name: 'Medium', link: '#blog' }, 
+        { name: 'Blog', link: '#blog' }, 
     ];
   return (
     <header data-aos='fade-up' className='text-gray-600 body-font z-10'>
