@@ -4,7 +4,13 @@ export default function Contact() {
   return (
     <section id='contact' data-aos='fade-up' data-aos-delay='400'>
         <div className='py-8 lg:py-16 mx-auto max-w-screen-md'>
-            <h2 className='mb-4 text-4xl tracking-tight font-extrabold text-center text-white'>Contact Me</h2>
+            {/* <h2 className='mb-4 text-4xl tracking-tight font-extrabold text-center text-white'>Contact Me</h2> */}
+            <h1
+                data-aos="zoom-in"
+                className="sm:text-4xl text-3xl font-bold title-font text-orange-400 mb-12 py-12 text-center"
+                >
+                Contact Me
+            </h1>
             <form action='#' className='space-y-8'>
                 <div>
                     <label for='email' className='block mb-2 text-xl font-medium text-white'>Email</label>
