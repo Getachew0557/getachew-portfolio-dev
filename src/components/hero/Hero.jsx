@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../navbar/Navbar';
-import { FaGithub, FaLinkedin, FaTelegram, FaFacebook } from 'react-icons/fa'; // Import icons
+import { FaGithub, FaLinkedin, FaTelegram, FaFacebook, FaWhatsapp } from 'react-icons/fa'; // Import WhatsApp icon
 import hi from '../../assets/hi.png';
 import img from '../../assets/hero.jpg';
 
@@ -75,8 +75,29 @@ export default function Hero() {
               <a href="https://linkedin.com/in/getachew-getu" target="_blank" rel="noopener noreferrer" className="text-white hover:text-orange-500">
                 <FaLinkedin size={30} />
               </a>
-              <a href="https://t.me/@Two_G" target="_blank" rel="noopener noreferrer" className="text-white hover:text-orange-500">
+              <a 
+                href="https://t.me/@Two_G" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-white hover:text-orange-500 relative group"
+              >
                 <FaTelegram size={30} />
+                {/* Hover tooltip for Telegram */}
+                <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 text-xs text-white bg-gray-800 p-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                  +251947831668
+                </span>
+              </a>
+              <a 
+                href="https://wa.me/+251947831668" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-white hover:text-orange-500 relative group"
+              >
+                <FaWhatsapp size={30} />
+                {/* Hover tooltip for WhatsApp */}
+                <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 text-xs text-white bg-gray-800 p-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                  +251947831668
+                </span>
               </a>
               <a href="https://web.facebook.com/getachew.getu.56/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-orange-500">
                 <FaFacebook size={30} />
