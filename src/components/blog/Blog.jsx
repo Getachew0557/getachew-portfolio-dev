@@ -27,7 +27,7 @@ export default function Blog() {
     <section id="blog" className="text-gray-600 body-font bg-gray-1200 py-24 px-6 sm:px-12">
       <div className="container mx-auto text-center">
         <h1 className="sm:text-4xl text-3xl font-bold title-font text-orange-400 mb-12">
-          Blog
+          Blogs
         </h1>
         <div className="flex flex-wrap justify-center gap-8 mt-24">
           {blogPosts.map((post, index) => (

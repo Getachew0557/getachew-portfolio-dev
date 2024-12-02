@@ -1,6 +1,6 @@
 import React from 'react';
 import img_experience from '../../assets/img_experience.png';
-import { FaReact, FaAws, FaGitAlt, FaRegHandPointRight } from 'react-icons/fa';
+import { FaReact, FaAws, FaGitAlt, FaCogs } from 'react-icons/fa';
 
 export default function Experience() {
   return (
@@ -13,7 +13,13 @@ export default function Experience() {
 
         {/* Title Section */}
         <div className="text-center my-8">
-            <h1 className='title-font sm:text-4xl text-3xl font-medium text-orange-500'>Experience</h1>
+            {/* <h1 className='title-font sm:text-4xl text-3xl font-medium text-orange-500'>Experience</h1> */}
+            <h1
+                data-aos="zoom-in"
+                className="sm:text-4xl text-3xl font-bold title-font text-orange-400 mb-12 py-12 text-center"
+                >
+                Experience
+            </h1>
         </div>
 
         {/* Main Experience Container */}
@@ -28,15 +34,15 @@ export default function Experience() {
             <div data-aos='fade-left' data-aos-delay='400' className='lg:flex-grow md:w-1/2 flex flex-col md:items-start md:text-left items-center text-center px-28'>
                 {/* Container for Image and Text to Align the Line */}
                 <div className="flex items-start justify-start w-full relative">
-                    {/* Vertical Line Divider (Full Height, ends slightly below last text) */}
-                    <div className="absolute left-[-11%] h-[calc(100%+24px)] w-px bg-gray-400"></div>
+                    {/* Vertical Line Divider (Full Height, solid) */}
+                    <div className="absolute left-[-11%] h-full w-[3px] bg-gray-400"></div>
 
                     {/* Text Section */}
                     <div className='lg:flex-grow md:w-1/2 flex flex-col md:items-start md:text-left items-center text-center'>
                         {/* First Experience Section */}
                         <div className="mb-8">
                             <div className="flex items-center space-x-4 mb-4 relative z-10">
-                                <FaRegHandPointRight className="text-orange-500 text-2xl absolute left-[-60px] -top-2 mt-3" />
+                                <FaCogs className="text-orange-500 text-2xl absolute left-[-60px] -top-2 mt-3" />
                                 <div className="flex flex-col items-start">
                                     <h2 className='title-font font-bold text-white sm:text-2xl'>Software Application Developer</h2>
                                     <h3 className='text-orange-400 text-lg'>
@@ -69,7 +75,7 @@ export default function Experience() {
                         {/* Second Experience Section */}
                         <div className="mb-8">
                             <div className="flex items-center space-x-4 mb-4 relative z-10">
-                                <FaRegHandPointRight className="text-orange-500 text-2xl absolute left-[-60px] -top-2 mt-3" />
+                                <FaCogs className="text-orange-500 text-2xl absolute left-[-60px] -top-2 mt-3" />
                                 <div className="flex flex-col items-start">
                                     <h2 className='title-font font-bold text-white sm:text-2xl'>Junior Software Support Engineer</h2>
                                     <h3 className='text-orange-400 text-lg'>
