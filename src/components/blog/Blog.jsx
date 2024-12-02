@@ -4,22 +4,22 @@ export default function Blog() {
   // Sample blog data (You can replace this with dynamic fetching if needed)
   const blogPosts = [
     {
-      title: "How to Master Python",
-      description: "Learn the key principles that will help you master Python in just a few months.",
-      link: "https://medium.com/@getachewgetu2010/how-to-master-python-1234567890",
-      date: "Oct 15, 2024",
+      title: "Natural Language Processing (NLP)",
+      description: "Learn the key principles of Natural Language Processing and how it shapes AI and machine learning.",
+      link: "https://medium.com/@getachewgetu2010/natural-language-processing-nlp-83eb45c440bb",
+      date: "Feb 17, 2024",
     },
     {
-      title: "The Power of Machine Learning",
-      description: "Explore how machine learning is transforming industries and changing the world.",
-      link: "https://medium.com/@getachewgetu2010/the-power-of-machine-learning-1234567890",
-      date: "Sep 20, 2024",
+      title: "Introduction the application of machine learning",
+      description: "Explore how machine learning is transforming industries and shaping the future across various sectors.",
+      link: "https://medium.com/@getachewgetu2010/intriduction-the-application-of-machine-learning-58952a2aa86d",
+      date: "June 20, 2024",
     },
     {
-      title: "Web Development in 2024",
-      description: "Discover the latest trends and technologies in web development for the year 2024.",
-      link: "https://medium.com/@getachewgetu2010/web-development-in-2024-1234567890",
-      date: "Aug 30, 2024",
+      title: "Docker",
+      description: "Discover the latest trends and technologies in containerization and orchestration for web development in 2024.",
+      link: "https://medium.com/@getachewgetu2010/docker-unlocking-the-power-of-containerization-for-developers-f2192b00bf76",
+      date: "Dec 2, 2024",
     },
   ];
 
@@ -29,11 +29,11 @@ export default function Blog() {
         <h1 className="sm:text-4xl text-3xl font-bold title-font text-orange-400 mb-12">
           Blog
         </h1>
-        <div className="flex flex-wrap justify-center gap-8">
+        <div className="flex flex-wrap justify-center gap-8 mt-24">
           {blogPosts.map((post, index) => (
             <div
               key={index}
-              className="bg-gray-800 p-6 rounded-lg w-full sm:w-1/3 lg:w-1/3 xl:w-1/4"
+              className="p-6 rounded-lg w-full sm:w-1/3 lg:w-1/3 xl:w-1/4 border-2 border-orange-400 shadow-[0_0_15px_rgba(255,165,0,0.7)] border-opacity-60 rounded-lg overflow-hidden"
               data-aos="fade-up"
               data-aos-delay={index * 200}
             >
