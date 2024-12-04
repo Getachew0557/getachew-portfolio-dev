@@ -107,6 +107,6 @@ Dark Mode: Using localStorage and state management to toggle between light and d
 Vercel: Deployed the portfolio on Vercel for easy access and sharing.
 
 ## 💬 Contact
-LinkedIn: https://linkedin.com/in/getachew
+LinkedIn: https://linkedin.com/in/getachew-getu
 GitHub: https://github.com/Getachew0557
-Email: getachew@email.com
+Email: getachewgetu2010@email.com
