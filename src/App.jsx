@@ -11,6 +11,8 @@ import Blog from './components/blog/Blog'
 import Contact from './components/contact/Contact';
 import Footer from './components/footer/Footer';
 import Education from './components/education/Education'
+import Loglib from '@loglib/tracker/react';
+
 
 export default function App() {
   useEffect(()=>{
@@ -30,6 +32,11 @@ export default function App() {
     <Blog/>
     <Contact />
     <Footer />
+    <Loglib
+        config={{
+          id: "getachew_vercel", 
+        }}
+      />
    </main>
   )
 }

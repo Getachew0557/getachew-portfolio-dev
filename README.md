@@ -10,11 +10,12 @@ React Icons: A library for using popular icons in React applications.
 You can view the live demo of the portfolio here or run it locally to explore.
 
 ## 🛠️ Features
-Responsive Layout: The portfolio is designed to be fully responsive, adapting to different screen sizes (mobile, tablet, desktop).
-Dynamic Sections: Features interactive sections such as an About Me section, Skills, Projects, and Contact Information.
-Modern UI: Tailwind CSS ensures a clean, minimalistic, and modern user interface.
-Smooth Scrolling: The page uses smooth scrolling transitions for a better user experience.
-Dark Mode: The portfolio has built-in dark mode functionality for enhanced readability at night.
+- **Responsive Layout**: The portfolio is designed to be fully responsive, adapting to different screen sizes (mobile, tablet, desktop).
+- **Dynamic Sections**: Features interactive sections such as an About Me section, Skills, Projects, and Contact Information.
+- **Modern UI**: Tailwind CSS ensures a clean, minimalistic, and modern user interface.
+- **Smooth Scrolling**: The page uses smooth scrolling transitions for a better user experience.
+- **Dark and Light Mode**: The portfolio has built-in dark mode functionality for enhanced readability at night.
+
 ## 🏁 Getting Started
 To get started with this project locally, follow these steps:
 
