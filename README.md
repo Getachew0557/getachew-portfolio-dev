@@ -2,10 +2,10 @@
 This is my personal portfolio website built using Vite, React, and Tailwind CSS. It showcases my skills, projects, and professional background in a modern and responsive design.
 
 ## 🚀 Technologies Used
-Vite: A fast and lightweight build tool for modern web development.
-React: A JavaScript library for building user interfaces.
-Tailwind CSS: A utility-first CSS framework for creating custom designs with ease.
-React Icons: A library for using popular icons in React applications.
+- **Vite**: A fast and lightweight build tool for modern web development.
+- **React**: A JavaScript library for building user interfaces.
+- **Tailwind CSS**: A utility-first CSS framework for creating custom designs with ease.
+- **React Icons**: A library for using popular icons in React applications.
 ## 📸 Demo
 You can view the live demo of the portfolio here or run it locally to explore.
 
