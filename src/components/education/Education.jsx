@@ -180,7 +180,7 @@ export default function Education() {
 
                 {/* Right Side */}
                 {edu.side === "right" && (
-                  <div className="w-1/2 text-left pl-6">
+                  <div className="w-1/2 text-left pl-6 pr-24">
                     <h2 className="text-xl font-bold text-orange-400">{edu.title}</h2>
                     <h3 className="text-lg text-gray-300">{edu.institution}</h3>
                     <p className="text-sm text-gray-400">{edu.date}</p>
