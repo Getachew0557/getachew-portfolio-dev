@@ -17,15 +17,15 @@ export default function Education() {
     {
       side: "right",
       title: "Master of Science in Computer Engineering",
-      institution: "Addis Ababa Science and Technology University",
+      institution: "Addis Ababa Science and Technology University - Addis Ababa, Ethiopia",
       date: "2021 - 2024 - Addis Ababa, Ethiopia",
       description: "Focus on artificial intelligence, machine learning, Image and Video Processing, Highperformance Computing, Parallel Computing, Distrbuted System, and Cyber Security.",
     },
     {
       side: "left",
       title: "Bachelor of Science in Electrical and Computer Engineering",
-      institution: "Addis Ababa Science and Technology University",
-      date: "2017 - 2022 - Addis Ababa, Ethiopia",
+      institution: "Addis Ababa Science and Technology University - Addis Ababa, Ethiopia",
+      date: "2017 - 2022 ",
       description: "Specialized in Software Engineering, OOP, Database, programming, data structure and algorthim.",
     },
     {
