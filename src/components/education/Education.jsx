@@ -33,7 +33,7 @@ export default function Education() {
       title: "Artificial Intelligence Mastery",
       institution: "10 Academy- Addis Ababa, Ethiopia",
       date: "August 2024 - November 2024",
-      description: "Advanced training in AI techniques and applications includes AI, Machine Learning, Gen AI, Time-series forcasting, LLM.",
+      description: "Advanced training in AI techniques and applications includes AI, Machine Learning, Gen AI, Time-series forcasting, LLM and Data Analysis.",
     },
   ];
 
