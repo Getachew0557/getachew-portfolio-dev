@@ -99,13 +99,13 @@ This project is open-source and available under the MIT License.
 **- React Icons**: For providing a vast library of icons that are easy to use in React applications.
 
 ## 🛠️ Tools Used
-Vite: Build tool for faster development.
-React: Frontend JavaScript library.
-Tailwind CSS: Utility-first CSS framework for custom designs.
-React Icons: A library of icons for React applications.
-React Router: For handling routing and navigation within the portfolio.
-Dark Mode: Using localStorage and state management to toggle between light and dark modes.
-Vercel: Deployed the portfolio on Vercel for easy access and sharing.
+- **Vite**: Build tool for faster development.
+- **React**: Frontend JavaScript library.
+- **Tailwind CSS**: Utility-first CSS framework for custom designs.
+- **React Icons**: A library of icons for React applications.
+- **React Router**: For handling routing and navigation within the portfolio.
+- **Dark Mode**: Using localStorage and state management to toggle between light and dark modes.
+- **Vercel**: Deployed the portfolio on Vercel for easy access and sharing.
 
 ## 💬 Contact
 LinkedIn: https://linkedin.com/in/getachew-getu
