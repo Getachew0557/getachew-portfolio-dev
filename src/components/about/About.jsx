@@ -46,7 +46,7 @@ export default function About() {
               </p>
               <div className="flex justify-center md:justify-start">
                 <a
-                  href="https://drive.google.com/file/d/1ybVY2oliC0HvwYRqmFdpFB7RAtXFQJFl/view?usp=sharing"
+                  href="https://drive.google.com/file/d/17SsX_4k20JH12lBalstW5B7xQa9m6LDr/view?usp=drive_link"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
