@@ -57,6 +57,7 @@ export default function Hero() {
 
       <Navbar />
       <section
+      id='home'
         data-aos="fade-up"
         data-aos-delay="250"
         className="text-white body-font z-10"
@@ -73,7 +74,7 @@ export default function Hero() {
               alt="Hi"
             />
             {/* Heading and Description */}
-            <h1 className="title-font sm:text-4xl text-3xl font-bold text-white">
+            <h1 className="title-font sm:text-4xl text-3xl font-bold text-white mt-6">
               Hi! I'm GETACHEW
             </h1>
             <p className="mt-4 leading-relaxed text-sm sm:text-base">
@@ -82,7 +83,7 @@ export default function Hero() {
               I'm a web developer with extensive experience for over 3 years. Expertise is to create web design, front-end design, AI model development.
             </p>
             {/* Social Icons */}
-            <div className="flex justify-center flex-wrap space-x-4 sm:space-x-2 mt-4">
+            <div className="flex justify-center flex-wrap space-x-4 sm:space-x-2 mt-12">
               <a
                 href="https://github.com/Getachew0557"
                 target="_blank"
