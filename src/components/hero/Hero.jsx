@@ -13,6 +13,7 @@ export default function Hero() {
     "Gen AI Engineer",
     "Researcher",
   ];
+
   let currentProfessionIndex = 0;
 
   useEffect(() => {
@@ -48,32 +49,39 @@ export default function Hero() {
 
   return (
     <div className="relative overflow-hidden min-h-screen flex flex-col">
+      {/* Yellow Circle (hidden on small screens) */}
       <div
-        className="md:h-[720px] h-[480px] md:w-[640px] w-[480px] right-0 bg-gradient-to-r from-orange-600 
-          via-yellow-500 to-red-400 absolute rounded-full transform rotate-12 -top-20 shadow-lg"
+        className="hidden md:block md:h-[720px] h-[480px] md:w-[640px] w-[480px] right-0 bg-gradient-to-r from-orange-600 
+        via-yellow-500 to-red-400 absolute rounded-full transform rotate-12 -top-20 shadow-lg"
       ></div>
+
       <Navbar />
       <section
         data-aos="fade-up"
         data-aos-delay="250"
         className="text-white body-font z-10"
       >
-        <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-          <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center relative">
+        <div className="container mx-auto flex px-5 py-24 flex-col-reverse md:flex-row items-center">
+          {/* Left Section */}
+          <div className="flex flex-col items-center md:items-start text-center md:text-left md:w-1/2 relative">
+            {/* Hi Image */}
             <img
               src={hi}
               data-aos="fade-up"
               data-aos-delay="400"
-              className="absolute top-[300px] left-20 md:top-[-30px] md:left-[450px] transform -translate-x-1/2 -translate-y-1/2 w-16 h-16"
+              className="w-12 h-12 md:w-16 md:h-16 mb-4 md:mb-0"
+              alt="Hi"
             />
-            <h1 className="title-font sm:text-4xl text-3xl mb-4 font-bold text-white">
+            {/* Heading and Description */}
+            <h1 className="title-font sm:text-4xl text-3xl font-bold text-white">
               Hi! I'm GETACHEW
             </h1>
-            <p className="mb-8 leading-relaxed text-sm sm:text-base">
+            <p className="mt-4 leading-relaxed text-sm sm:text-base">
               <span className="text-orange-500 text-lg font-semibold">{text}</span>
               <br />
               I'm a web developer with extensive experience for over 3 years. Expertise is to create web design, front-end design, AI model development.
             </p>
+            {/* Social Icons */}
             <div className="flex justify-center flex-wrap space-x-4 sm:space-x-2 mt-4">
               <a
                 href="https://github.com/Getachew0557"
@@ -123,11 +131,12 @@ export default function Hero() {
               </a>
             </div>
           </div>
-          <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+          {/* Right Section */}
+          <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-8 md:mb-0">
             <img
               src={img}
               alt="hero"
-              className="object-cover object-center rounded-full w-64 h-64 sm:w-80 sm:h-80"
+              className="object-cover object-center rounded-full w-64 h-64 sm:w-80 sm:h-80 mx-auto"
             />
           </div>
         </div>
