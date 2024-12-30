@@ -51,13 +51,12 @@ export default function Hero() {
     <div className="relative overflow-hidden min-h-screen flex flex-col">
       {/* Yellow Circle (hidden on small screens) */}
       <div
-        className="hidden md:block md:h-[720px] h-[480px] md:w-[640px] w-[480px] right-0 bg-gradient-to-r from-orange-600 
+        className="hidden md:block h-[480px] w-[480px] right-0 bg-gradient-to-r from-orange-600 
         via-yellow-500 to-red-400 absolute rounded-full transform rotate-12 -top-20 shadow-lg"
       ></div>
 
       <Navbar />
       <section
-      id='home'
         data-aos="fade-up"
         data-aos-delay="250"
         className="text-white body-font z-10"
@@ -74,7 +73,7 @@ export default function Hero() {
               alt="Hi"
             />
             {/* Heading and Description */}
-            <h1 className="title-font sm:text-4xl text-3xl font-bold text-white mt-6">
+            <h1 className="title-font sm:text-4xl text-3xl font-bold text-white">
               Hi! I'm GETACHEW
             </h1>
             <p className="mt-4 leading-relaxed text-sm sm:text-base">
@@ -83,7 +82,7 @@ export default function Hero() {
               I'm a web developer with extensive experience for over 3 years. Expertise is to create web design, front-end design, AI model development.
             </p>
             {/* Social Icons */}
-            <div className="flex justify-center flex-wrap space-x-4 sm:space-x-2 mt-12">
+            <div className="flex justify-center flex-wrap space-x-4 sm:space-x-2 mt-4">
               <a
                 href="https://github.com/Getachew0557"
                 target="_blank"
@@ -133,11 +132,12 @@ export default function Hero() {
             </div>
           </div>
           {/* Right Section */}
-          <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-8 md:mb-0">
+          <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-8 md:mb-0 relative">
             <img
               src={img}
               alt="hero"
               className="object-cover object-center rounded-full w-64 h-64 sm:w-80 sm:h-80 mx-auto"
+              style={{ marginLeft: 'calc(100vw - 480px)' }} /* Dynamically align with yellow circle */
             />
           </div>
         </div>
