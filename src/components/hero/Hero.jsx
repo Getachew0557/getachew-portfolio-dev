@@ -9,7 +9,7 @@ export default function Hero() {
   const professions = [
     "Machine Learning Engineer",
     "Data Scientist",
-    "Full Stack Web Developer",
+    "Full Stack Developer",
     "Gen AI Engineer",
     "Researcher",
   ];
@@ -48,105 +48,84 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="relative overflow-hidden min-h-screen flex flex-col">
-      {/* Yellow Circle (hidden on small screens) */}
+    <div className="relative overflow-hidden min-h-screen flex flex-col bg-gray-1200">
+      {/* Animated Yellow Circle */}
       <div
-        className="hidden md:block h-[480px] w-[480px] right-0 bg-gradient-to-r from-orange-600 
-        via-yellow-500 to-red-400 absolute rounded-full transform rotate-12 -top-20 shadow-lg"
+        className="hidden md:block h-[500px] w-[500px] lg:h-[680px] lg:w-[680px] right-0 bg-gradient-to-r 
+        from-orange-600 via-yellow-500 to-red-400 absolute rounded-full transform rotate-12 
+        -top-20 md:-top-40 lg:-top-20 -right-20 md:-right-40 lg:-right-20 shadow-lg 
+        animate-pulse transition-all duration-300"
       ></div>
 
       <Navbar />
       <section
         data-aos="fade-up"
         data-aos-delay="250"
-        className="text-white body-font z-10"
+        className="body-font z-10"
       >
-        <div className="container mx-auto flex px-5 py-24 flex-col-reverse md:flex-row items-center">
+        <div className="container mx-auto flex px-5 py-12 md:py-24 flex-col-reverse md:flex-row items-center">
           {/* Left Section */}
-          <div className="flex flex-col items-center md:items-start text-center md:text-left md:w-1/2 relative">
-            {/* Hi Image */}
-            <img
-              src={hi}
-              data-aos="fade-up"
-              data-aos-delay="400"
-              className="w-12 h-12 md:w-16 md:h-16 mb-4 md:mb-0"
-              alt="Hi"
-            />
-            {/* Heading and Description */}
-            <h1 className="title-font sm:text-4xl text-3xl font-bold text-white">
-              Hi! I'm GETACHEW
-            </h1>
-            <p className="mt-4 leading-relaxed text-sm sm:text-base">
-              <span className="text-orange-500 text-lg font-semibold">{text}</span>
-              <br />
-              I'm a web developer with extensive experience for over 3 years. Expertise is to create web design, front-end design, AI model development.
-            </p>
-            {/* Social Icons */}
-            <div className="flex justify-center flex-wrap space-x-4 sm:space-x-2 mt-4">
-              <a
-                href="https://github.com/Getachew0557"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-orange-500"
-              >
-                <FaGithub size={24} />
-              </a>
-              <a
-                href="https://linkedin.com/in/getachew-getu"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-orange-500"
-              >
-                <FaLinkedin size={24} />
-              </a>
-              <a
-                href="https://t.me/@Two_G"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-orange-500 relative group"
-              >
-                <FaTelegram size={24} />
-                <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 text-xs text-white bg-gray-800 p-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                  +251947831668
-                </span>
-              </a>
-              <a
-                href="https://wa.me/+251947831668"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-orange-500 relative group"
-              >
-                <FaWhatsapp size={24} />
-                <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 text-xs text-white bg-gray-800 p-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                  +251947831668
-                </span>
-              </a>
-              <a
-                href="https://web.facebook.com/getachew.getu.56/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-orange-500"
-              >
-                <FaFacebook size={24} />
-              </a>
+          <div className="flex flex-col items-center md:items-start text-center md:text-left md:w-1/2 relative mt-8 md:mt-0">
+            <div className="max-w-2xl">
+              <img
+                src={hi}
+                data-aos="fade-up"
+                data-aos-delay="400"
+                className="w-12 h-12 md:w-16 md:h-16 mb-4 animate-bounce"
+                alt="Hi"
+              />
+              <h1 className="title-font text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-100 mb-4">
+                Hi! I'm <span className="text-orange-500">GETACHEW</span>
+              </h1>
+              <p className="text-lg md:text-xl lg:text-2xl mb-4 text-gray-300">
+                I'm a <span className="text-orange-500 font-semibold">{text}</span>
+              </p>
+              <p className="text-sm md:text-base lg:text-lg text-gray-300 leading-relaxed">
+                Experienced developer with 3+ years in web development, AI model creation, 
+                and full-stack solutions. Passionate about building intelligent applications.
+              </p>
+              
+              {/* Social Icons */}
+              <div className="flex justify-center flex-wrap gap-4 sm:gap-6 mt-6">
+                {[
+                  { icon: <FaGithub />, link: 'https://github.com/Getachew0557' },
+                  { icon: <FaLinkedin />, link: 'https://linkedin.com/in/getachew-getu' },
+                  { icon: <FaTelegram />, link: 'https://t.me/@Two_G', tooltip: '+251947831668' },
+                  { icon: <FaWhatsapp />, link: 'https://wa.me/+251947831668', tooltip: '+251947831668' },
+                  { icon: <FaFacebook />, link: 'https://web.facebook.com/getachew.getu.56/' },
+                ].map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-300 hover:text-orange-500 transition-all duration-300 transform hover:scale-125 relative group"
+                  >
+                    {React.cloneElement(social.icon, { size: 28 })}
+                    {social.tooltip && (
+                      <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 text-xs text-white bg-gray-1200 px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                        {social.tooltip}
+                      </span>
+                    )}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
-          {/* Right Section */}
+
+          {/* Right Section - Image */}
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-8 md:mb-0 relative">
-            <img
-              src={img}
-              alt="hero"
-              className="object-cover object-center rounded-full w-64 h-64 sm:w-80 sm:h-80 mx-auto"
-              style={{ marginLeft: 'calc(100vw - 480px)' }} /* Dynamically align with yellow circle */
-            />
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 mx-auto">
+              <div className="absolute inset-0 bg-orange-500/20 rounded-full blur-xl animate-pulse"></div>
+              <img
+                src={img}
+                alt="Getachew"
+                className="object-cover object-center rounded-full w-full h-full border-4 border-orange-500/30 relative z-10 hover:border-orange-500 transition-all duration-300 shadow-xl"
+              />
+            </div>
           </div>
         </div>
       </section>
     </div>
   );
 }
-
-
-
-
-
