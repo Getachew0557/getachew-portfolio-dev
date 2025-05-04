@@ -10,7 +10,7 @@ import udacityLogo from "../../assets/udacity.png"
 
 import fortinetLogo from "../../assets/fortinet.png";
 
-export default function Education() {
+export default function Education({ darkMode }) {
   const [activeTab, setActiveTab] = useState("Education");
 
   const educationData = [
@@ -91,35 +91,44 @@ export default function Education() {
     },
 
   ];
-
-  return (
+ return (
     <section
       id="education"
-      className="relative overflow-hidden flex flex-col text-white body-font bg-gray-1200 py-24 px-6 sm:px-12"
+      className={`relative overflow-hidden flex flex-col py-16 md:py-24 px-4 sm:px-6 lg:px-8 transition-colors duration-300 ${
+        darkMode ? 'bg-gray-900' : 'bg-gray-50'
+      }`}
     >
       <div className="container mx-auto flex flex-col items-center">
-        {/* Section Title */}
-        <h1 className="sm:text-4xl text-3xl font-bold title-font text-orange-400 mb-12 py-12 text-center">
+        <h1 className={`text-3xl sm:text-4xl font-bold mb-8 md:mb-12 text-center ${
+          darkMode ? 'text-orange-400' : 'text-orange-600'
+        }`}>
           {activeTab}
         </h1>
 
-        {/* Tab Buttons */}
-        <div className="flex justify-center space-x-6 mb-24">
+        <div className="flex flex-wrap justify-center gap-4 mb-12 md:mb-24">
           <button
-            className={`px-6 py-2 rounded-full font-semibold text-lg ${
+            className={`px-4 py-2 rounded-full font-semibold text-sm md:text-base transition-colors duration-300 ${
               activeTab === "Education"
-                ? "bg-orange-500 text-white"
-                : "bg-gray-700 hover:bg-gray-600 text-gray-300"
+                ? darkMode 
+                  ? 'bg-orange-500 text-white' 
+                  : 'bg-orange-600 text-white'
+                : darkMode 
+                  ? 'bg-gray-800 hover:bg-gray-700 text-gray-300' 
+                  : 'bg-gray-200 hover:bg-gray-300 text-gray-700'
             }`}
             onClick={() => setActiveTab("Education")}
           >
             Education
           </button>
           <button
-            className={`px-6 py-2 rounded-full font-semibold text-lg ${
+            className={`px-4 py-2 rounded-full font-semibold text-sm md:text-base transition-colors duration-300 ${
               activeTab === "Certification"
-                ? "bg-orange-500 text-white"
-                : "bg-gray-700 hover:bg-gray-600 text-gray-300"
+                ? darkMode 
+                  ? 'bg-orange-500 text-white' 
+                  : 'bg-orange-600 text-white'
+                : darkMode 
+                  ? 'bg-gray-800 hover:bg-gray-700 text-gray-300' 
+                  : 'bg-gray-200 hover:bg-gray-300 text-gray-700'
             }`}
             onClick={() => setActiveTab("Certification")}
           >
@@ -127,93 +136,117 @@ export default function Education() {
           </button>
         </div>
 
-        {/* Content Section */}
         {activeTab === "Education" ? (
-          <div className="relative w-full flex flex-col items-center">
-            {/* Vertical Line */}
-            <div className="absolute w-1 bg-gray-700 h-full left-1/2 transform -translate-x-1/2"></div>
-
-            {/* Education Items */}
-            {educationData.map((edu, index) => (
-              <div
-                key={index}
-                className={`flex items-center space-x-6 my-12 w-full ${
-                  edu.side === "left" ? "justify-end" : "justify-start"
-                }`}
-                data-aos="fade-up"
-                data-aos-delay={index * 100}
-              >
-                {/* Left Side */}
-                {edu.side === "left" && (
-                  <div className="w-1/2 text-left pr-6 px-24">
-                    <h2 className="text-xl font-bold text-orange-400">{edu.title}</h2>
-                    <h3 className="text-lg text-gray-300">{edu.institution}</h3>
-                    <p className="text-sm text-gray-400">{edu.date}</p>
-                    <p className="mt-2 text-gray-200">{edu.description}</p>
+          <div className="relative w-full max-w-12xl mx-auto">
+            {/* Desktop Timeline */}
+            <div className="hidden md:block">
+              <div className={`absolute left-1/2 -translate-x-1/2 w-1 ${darkMode ? 'bg-gray-700' : 'bg-gray-300'} h-full`}></div>
+              {educationData.map((edu, index) => (
+                <div
+                  key={index}
+                  className={`flex ${index % 2 === 0 ? 'justify-start' : 'justify-end'} mb-20`}
+                  data-aos="fade-up"
+                >
+                  <div className={`w-1/2 p-6 ${index % 2 === 0 ? 'pr-16' : 'pl-16'}`}>
+                    <div className={`relative rounded-xl p-8 shadow-xl transition-all hover:shadow-2xl ${
+                      darkMode ? 'bg-gray-800' : 'bg-white'
+                    }`}>
+                      <div className={`absolute top-8 -translate-y-1/2 ${
+                        index % 2 === 0 ? '-right-24' : '-left-24'
+                      }`}>
+                        <div className={`p-3 rounded-full border-2 ${
+                          darkMode 
+                            ? 'bg-gray-800 border-orange-500' 
+                            : 'bg-white border-orange-600'
+                        }`}>
+                          <FaGraduationCap size={32} className={`${darkMode ? 'text-orange-500' : 'text-orange-600'}`} />
+                        </div>
+                      </div>
+                      <h2 className={`text-xl font-bold mb-4 ${darkMode ? 'text-orange-400' : 'text-orange-600'}`}>
+                        {edu.title}
+                      </h2>
+                      <h3 className={`text-sm mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                        {edu.institution}
+                      </h3>
+                      <p className={`text-xs mb-4 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                        {edu.date}
+                      </p>
+                      <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                        {edu.description}
+                      </p>
+                    </div>
                   </div>
-                )}
+                </div>
+              ))}
+            </div>
 
-                {/* Icon on the Line (Left Side Graduation Cap) */}
-                {edu.side === "left" && (
-                  <div
-                    className="flex flex-col items-center absolute left-1/2 transform -translate-x-1/2"
-                    style={{
-                      top: "0%", // Positioning from top for overlap
-                      left: "calc(50% - 23px)", // Move the left-side cap to overlap the line more
-                    }}
-                  >
-                    <FaGraduationCap size={40} className="text-orange-500 mb-2" />
-                    <div className="w-1 bg-gray-700 h-24"></div>
+            {/* Mobile Timeline */}
+            <div className="md:hidden relative">
+              <div className={`absolute left-8 w-1 ${darkMode ? 'bg-gray-700' : 'bg-gray-300'} h-full`}></div>
+              {educationData.map((edu, index) => (
+                <div key={index} className="flex mb-12 pl-16" data-aos="fade-up">
+                  <div className={`absolute left-8 -translate-x-1/2 ${index === 0 ? 'top-4' : 'top-1/4'}`}>
+                    <div className={`p-3 rounded-full border-4 ${
+                      darkMode 
+                        ? 'bg-gray-800 border-orange-500' 
+                        : 'bg-white border-orange-600'
+                    }`}>
+                      <FaGraduationCap size={32} className={`${darkMode ? 'text-orange-500' : 'text-orange-600'}`} />
+                    </div>
+                    {index !== educationData.length - 1 && (
+                      <div className={`w-1 ${darkMode ? 'bg-gray-700' : 'bg-gray-300'} h-32 mt-4 ml-3`}></div>
+                    )}
                   </div>
-                )}
-
-                {/* Icon on the Line (Right Side Graduation Cap) */}
-                {edu.side === "right" && (
-                  <div
-                    className="flex flex-col items-center absolute left-1/2 transform -translate-x-1/2"
-                    style={{ top: "0%" }} // Adjust this value to place the right-side cap
-                  >
-                    <FaGraduationCap size={40} className="text-orange-500 mb-2" />
-                    <div className="w-1 bg-gray-700 h-24"></div>
+                  <div className={`rounded-xl p-6 shadow-lg ${
+                    darkMode ? 'bg-gray-800' : 'bg-white'
+                  }`}>
+                    <h2 className={`text-lg font-bold mb-3 ${darkMode ? 'text-orange-400' : 'text-orange-600'}`}>
+                      {edu.title}
+                    </h2>
+                    <h3 className={`text-sm mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                      {edu.institution}
+                    </h3>
+                    <p className={`text-xs mb-3 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                      {edu.date}
+                    </p>
+                    <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                      {edu.description}
+                    </p>
                   </div>
-                )}
-
-                {/* Right Side */}
-                {edu.side === "right" && (
-                  <div className="w-1/2 text-left pl-6 pr-24">
-                    <h2 className="text-xl font-bold text-orange-400">{edu.title}</h2>
-                    <h3 className="text-lg text-gray-300">{edu.institution}</h3>
-                    <p className="text-sm text-gray-400">{edu.date}</p>
-                    <p className="mt-2 text-gray-200">{edu.description}</p>
-                  </div>
-                )}
-              </div>
-            ))}
+                </div>
+              ))}
+            </div>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
-{certificationData.map((cert, index) => (
-  <div
-    key={index}
-    className="flex flex-col items-center h-full border-2 border-orange-400 shadow-[0_0_15px_rgba(255,165,0,0.7)] border-opacity-60 rounded-lg overflow-hidden"
-    data-aos="fade-up"
-    data-aos-delay={index * 100}
-  >
-    <a href={cert.link} target="_blank" rel="noopener noreferrer">
-      <img
-        src={cert.logo}
-        alt={cert.name}
-        inst={cert.institution}
-        className="w-20 h-20 object-contain mb-4"
-      />
-    </a>
-    <h3 className="text-lg font-medium text-gray-300 text-center">
-        {cert.name} <br />
-        <span className="text-sm text-gray-400">{cert.institution}</span>
-    </h3>
-  </div>
-))}
-
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
+            {certificationData.map((cert, index) => (
+              <div
+                key={index}
+                className={`flex flex-col items-center p-6 rounded-xl transition-all duration-300 hover:scale-[1.02] ${
+                  darkMode 
+                    ? 'bg-gray-800 border border-orange-500 hover:shadow-[0_0_15px_rgba(255,165,0,0.3)]' 
+                    : 'bg-white border border-orange-400 shadow-lg hover:shadow-xl'
+                }`}
+                data-aos="fade-up"
+                data-aos-delay={index * 50}
+              >
+                <a href={cert.link} target="_blank" rel="noopener noreferrer" className="mb-4">
+                  <img
+                    src={cert.logo}
+                    alt={cert.name}
+                    className="w-24 h-24 object-contain hover:scale-105 transition-transform"
+                  />
+                </a>
+                <div className="text-center">
+                  <h3 className={`text-base font-medium ${darkMode ? 'text-gray-100' : 'text-gray-900'}`}>
+                    {cert.name}
+                  </h3>
+                  <p className={`mt-2 text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                    {cert.institution}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         )}
       </div>

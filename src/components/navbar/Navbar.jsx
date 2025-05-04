@@ -41,7 +41,7 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
                 <a
                   key={item.name}
                   href={item.link}
-                  className={`text-sm font-medium transition-colors
+                  className={` text-lg md:text-xl font-medium transition-colors  
                     ${darkMode ? 'text-gray-300 hover:text-orange-400' : 'text-gray-600 hover:text-orange-600'}`}
                 >
                   {item.name}

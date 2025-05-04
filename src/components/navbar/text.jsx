@@ -1,109 +1,105 @@
-import React, { useState } from 'react';
+import React from 'react';
+import img_experience from '../../assets/img_experience.png';
+import { FaReact, FaAws, FaGitAlt, FaCogs } from 'react-icons/fa';
 
-export default function Navbar() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false); // Track menu state (open or closed)
+export default function Experience() {
+  return (
+    <section id='experience' className='relative overflow-hidden flex flex-col text-gray-600 body-font'>
+        {/* Decorative Gradient Circles */}
+        <div className='absolute top-[100px] left-64 inset-x-0 flex items-start justify-center'>
+            <div className='h-96 w-96 bg-gradient-to-br from-[#ff910a] blur-2xl invisible opacity-40 rounded-full'></div>
+            <div className='h-96 w-96 bg-gradient-to-r from-[#ffdb12] opacity-40 blur-2xl rounded-full'></div>
+        </div>
 
-    const listNavbar = [
-        { name: 'Home', link: '#home' },
-        { name: 'About', link: '#about' },
-        { name: 'Skills', link: '#skills' },
-        { name: 'Experience', link: '#experience' },
-        { name: 'Education', link: '#education' },
-        { name: 'Language', link: '#language' },
-        { name: 'Projects', link: '#projects' },
-        { name: 'Blog', link: '#blog' },
-        { name: 'Contact me', link: '#contact' },
-    ];
+        {/* Title Section */}
+        <div className="text-center my-8">
+            {/* <h1 className='title-font sm:text-4xl text-3xl font-medium text-orange-500'>Experience</h1> */}
+            <h1
+                data-aos="zoom-in"
+                className="sm:text-4xl text-3xl font-bold title-font text-orange-400 mb-12 py-12 text-center"
+                >
+                Experience
+            </h1>
+        </div>
 
-    return (
-        <header className="fixed top-0 left-0 w-full z-50 bg-transparent">
-            <div className="container mx-auto flex p-5 items-center justify-between">
-                {/* Brand Name */}
-                <a className="flex items-center text-gray-900">
-                    <span className="text-3xl font-bold text-white">Getachew</span>
-                </a>
-
-                {/* Mobile Menu Button */}
-                <div className="lg:hidden">
-                    <button
-                        className="text-white"
-                        onClick={() => setIsMenuOpen(true)} // Open menu
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            className="w-8 h-8"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M4 6h16M4 12h16M4 18h16"
-                            />
-                        </svg>
-                    </button>
-                </div>
-
-                {/* Navigation Links (Desktop) */}
-                <nav className="hidden lg:flex space-x-5">
-                    {listNavbar.map((item, index) => (
-                        <a key={index} href={item.link} className="text-white hover:text-yellow-300">
-                            {item.name}
-                        </a>
-                    ))}
-                </nav>
+        {/* Main Experience Container */}
+        <div className='container mx-auto flex px-5 py-12 md:flex-row flex-col items-center'>
+            {/* Image Container */}
+            <div data-aos='fade-right' data-aos-delay='400' className='relative lg:max-w-lg lg:w-full md:w-1/2 w-5/6 md:mb-0'>
+                <div className='md:h-[450px] h-[400px] md:w-[300px] w-[300px] md:right-36 bg-gradient-to-r from-orange-600 via-yellow-500 to-red-400 absolute rounded-md transform rotate-3 -top-8 shadow-[0_0_40px_rgba(225,165,0,0.7)] z-0'></div>
+                <img src={img_experience} className='object-cover md:w-[300px] md:h-[450px] object-center rounded relative z-10' alt="Experience" />
             </div>
 
-            {/* Mobile Menu (Sidebar) */}
-            {isMenuOpen && (
-                <div className="fixed inset-0 z-40 flex">
-                    {/* Overlay */}
-                    <div
-                        className="bg-black bg-opacity-50 w-full"
-                        onClick={() => setIsMenuOpen(false)} // Close menu when clicking outside
-                    ></div>
+            {/* Text and Experience Details */}
+            <div data-aos='fade-left' data-aos-delay='400' className='lg:flex-grow md:w-1/2 flex flex-col md:items-start md:text-left items-center text-center px-28'>
+                {/* Container for Image and Text to Align the Line */}
+                <div className="flex items-start justify-start w-full relative">
+                    {/* Vertical Line Divider (Full Height, solid) */}
+                    <div className="absolute left-[-11%] h-full w-[3px] bg-gray-400"></div>
 
-                    {/* Sidebar */}
-                    <div className="bg-gray-900 text-white w-64 h-full shadow-lg flex flex-col items-start p-5 relative">
-                        {/* Close Button */}
-                        <button
-                            className="absolute top-4 right-4 text-white"
-                            onClick={() => setIsMenuOpen(false)} // Close menu
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                className="w-8 h-8"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="M6 18L18 6M6 6l12 12"
-                                />
-                            </svg>
-                        </button>
+                    {/* Text Section */}
+                    <div className='lg:flex-grow md:w-1/2 flex flex-col md:items-start md:text-left items-center text-center'>
+                        {/* First Experience Section */}
+                        <div className="mb-8">
+                            <div className="flex items-center space-x-4 mb-4 relative z-10">
+                                <FaCogs className="text-orange-500 text-2xl absolute left-[-60px] -top-2 mt-3" />
+                                <div className="flex flex-col items-start">
+                                    <h2 className='title-font font-bold text-white sm:text-2xl'>Software Application Developer</h2>
+                                    <h3 className='text-orange-400 text-lg'>
+                                        <span className="text-white">at </span>
+                                        Information Network Security Administration (INSA)
+                                    </h3>
+                                    <p className="text-gray-300 text-sm">March 2023 - Ongoing - Addis Ababa, Ethiopia</p>
+                                </div>
+                            </div>
+                            <ul className='list-disc list-inside text-white mb-8 pl-4'>
+                                <li className='flex items-center mb-4'>
+                                    <FaReact className='text-orange-500 mr-2' />
+                                    Developed and maintained scalable web applications using Python and AWS infrastructure services.
+                                </li>
+                                <li className='flex items-center mb-4'>
+                                    <FaAws className='text-orange-500 mr-2' />
+                                    Contributed to the Web Application Firewall and Antivirus, ensuring the protection of organizational assets.
+                                </li>
+                                <li className='flex items-center mb-4'>
+                                    <FaGitAlt className='text-orange-500 mr-2' />
+                                    Implemented and managed CI/CD pipelines using Git, facilitating continuous integration and deployment.
+                                </li>
+                                <li className='flex items-center'>
+                                    <FaAws className='text-orange-500 mr-2' />
+                                    Integrated machine learning models for advanced threat intelligence, enhancing network security measures.
+                                </li>
+                            </ul>
+                        </div>
 
-                        {/* Navbar Links */}
-                        <nav className="mt-10 flex flex-col space-y-4 w-full">
-                            {listNavbar.map((item, index) => (
-                                <a
-                                    key={index}
-                                    href={item.link}
-                                    className="text-lg py-2 px-4 w-full hover:bg-yellow-500 rounded"
-                                    onClick={() => setIsMenuOpen(false)} // Close menu on link click
-                                >
-                                    {item.name}
-                                </a>
-                            ))}
-                        </nav>
+                        {/* Second Experience Section */}
+                        <div className="mb-8">
+                            <div className="flex items-center space-x-4 mb-4 relative z-10">
+                                <FaCogs className="text-orange-500 text-2xl absolute left-[-60px] -top-2 mt-3" />
+                                <div className="flex flex-col items-start">
+                                    <h2 className='title-font font-bold text-white sm:text-2xl'>Junior Software Support Engineer</h2>
+                                    <h3 className='text-orange-400 text-lg'>
+                                        <span className="text-white">at </span>
+                                        Moti Engineering PLC
+                                    </h3>
+                                    <p className="text-gray-300 text-sm">December 2022 - March 2023 - Addis Ababa, Ethiopia</p>
+                                </div>
+                            </div>
+                            <ul className='list-disc list-inside text-white pl-4'>
+                                <li className='flex items-center mb-4'>
+                                    <FaReact className='text-orange-500 mr-2' />
+                                    Developed a Voice Guidance application, assisted clients with software troubleshooting.
+                                </li>
+                                <li className='flex items-center'>
+                                    <FaReact className='text-orange-500 mr-2' />
+                                    Conducted training sessions on new software features.
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            )}
-        </header>
-    );
+            </div>
+        </div>
+    </section>
+  );
 }

@@ -79,7 +79,7 @@ export default function Hero({ darkMode, toggleDarkMode }) {
                   ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
                 I'm a <span className="text-orange-500 font-semibold">{text}</span>
               </p>
-              <p className={`text-sm md:text-base lg:text-lg leading-relaxed 
+              <p className={`text-lg md:text-xl leading-relaxed font-medium
                   ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
                 Experienced developer with 3+ years in web development, AI model creation, 
                 and full-stack solutions. Passionate about building intelligent applications.
