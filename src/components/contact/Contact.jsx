@@ -1,38 +1,83 @@
 import React from 'react'
 
-export default function Contact() {
+export default function Contact({ darkMode }) {
   return (
-    <section id='contact' data-aos='fade-up' data-aos-delay='400'>
-        <div className='py-8 lg:py-16 mx-auto max-w-screen-md'>
-            {/* <h2 className='mb-4 text-4xl tracking-tight font-extrabold text-center text-white'>Contact Me</h2> */}
-            <h1
-                data-aos="zoom-in"
-                className="sm:text-4xl text-3xl font-bold title-font text-orange-400 mb-12 py-12 text-center"
-                >
-                Contact Me
-            </h1>
-            <form action='#' className='space-y-8'>
-                <div>
-                    <label for='email' className='block mb-2 text-xl font-medium text-white'>Email</label>
-                    <input 
-                    type='email' 
-                    id='email' 
-                    className='shadow-sm bg-gray-300 font-bold border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5' 
-                    placeholder='name@exemple.com' required/>
-                </div>
-                <div className='sm:col-span-2'>
-                    <label for='message' className='block mb-2 text-xl font-medium text-white'>Message</label>
-                    <textarea 
-                    rows="6"
-                    id='message' 
-                    className='shadow-sm bg-gray-300 font-bold border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5' 
-                    placeholder='Leave a comment ...' required/>
-                </div>
-                <button className='inline-flex text-white bg-orange-500 border-0 py-2 px-6 focus:outline-none hover:bg-orange-600 hover:shadow-[0_0_40px_rgba(255,165,0,0.7)] rounded-full text-lg'>
-                    Send Message
-                </button>
-            </form>
-        </div>
+    <section 
+      id='contact' 
+      className={`py-12 md:py-16 px-4 sm:px-6 transition-colors duration-300 ${
+        darkMode ? 'bg-gray-900' : 'bg-gray-50'
+      }`}
+      data-aos='fade-up' 
+      data-aos-delay='400'
+    >
+      <div className='mx-auto max-w-screen-md'>
+        <h1
+          className={`text-3xl sm:text-4xl font-bold mb-8 md:mb-12 text-center ${
+            darkMode ? 'text-orange-400' : 'text-orange-600'
+          }`}
+        >
+          Contact Me
+        </h1>
+        
+        <form action='#' className='space-y-6'>
+          <div>
+            <label 
+              htmlFor='email' 
+              className={`block mb-2 text-sm md:text-base font-medium ${
+                darkMode ? 'text-gray-300' : 'text-gray-700'
+              }`}
+            >
+              Email
+            </label>
+            <input 
+              type='email' 
+              id='email' 
+              className={`w-full p-3 text-sm md:text-base rounded-lg border transition-colors ${
+                darkMode 
+                  ? 'bg-gray-800 border-gray-700 text-gray-300 focus:ring-orange-500 focus:border-orange-500' 
+                  : 'bg-gray-100 border-gray-300 text-gray-900 focus:ring-orange-600 focus:border-orange-600'
+              }`}
+              placeholder='name@example.com' 
+              required
+            />
+          </div>
+
+          <div>
+            <label 
+              htmlFor='message' 
+              className={`block mb-2 text-sm md:text-base font-medium ${
+                darkMode ? 'text-gray-300' : 'text-gray-700'
+              }`}
+            >
+              Message
+            </label>
+            <textarea 
+              rows="6"
+              id='message'
+              className={`w-full p-3 text-sm md:text-base rounded-lg border transition-colors ${
+                darkMode 
+                  ? 'bg-gray-800 border-gray-700 text-gray-300 focus:ring-orange-500 focus:border-orange-500' 
+                  : 'bg-gray-100 border-gray-300 text-gray-900 focus:ring-orange-600 focus:border-orange-600'
+              }`}
+              placeholder='Leave a message...'
+              required
+            />
+          </div>
+
+          <div className='flex'>
+            <button 
+              type='submit'
+              className={`inline-flex items-center px-8 py-3 text-sm md:text-base font-medium rounded-full transition-all duration-300 ${
+                darkMode 
+                  ? 'text-white bg-orange-500 hover:bg-orange-600 hover:shadow-[0_0_20px_rgba(255,165,0,0.4)]' 
+                  : 'text-white bg-orange-600 hover:bg-orange-700 hover:shadow-[0_0_20px_rgba(255,140,0,0.3)]'
+              }`}
+            >
+              Send Message
+            </button>
+          </div>
+        </form>
+      </div>
     </section>
   )
 }
