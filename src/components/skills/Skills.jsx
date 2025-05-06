@@ -65,11 +65,13 @@ export default function Skills({ darkMode }) {
         {/* Section Title */}
         <h1
           data-aos="zoom-in"
-          className={`text-3xl sm:text-4xl font-bold mb-8 md:mb-12 text-center ${
+          data-aos-delay="300"
+          className={`text-4xl sm:text-5xl lg:text-6xl font-bold mb-8 md:mb-12 text-center relative inline-block ${
             darkMode ? 'text-orange-400' : 'text-orange-600'
           }`}
         >
           Skills
+          
         </h1>
 
         {/* Skill Category Buttons - Mobile Responsive */}

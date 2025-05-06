@@ -51,15 +51,15 @@ export default function Projects() {
       live: "https://credit-score-classifications-1.onrender.com/",
       images: [credit1, credit2]
     },
-    // {
-    //   id: 4,
-    //   image: image4,
-    //   title: "Project 4",
-    //   description: "Photo description for project",
-    //   video: "https://www.youtube.com/embed/EXAMPLE_VIDEO_ID", // Replace with real video link
-    //   github: "https://github.com/example/project4",
-    //   live: "https://example.com/project4",
-    // },
+     {
+       id: 4,
+       image: image4,
+       title: "Dev Assistant AI Agent",
+       description: "Dev Assistant AI Agent",
+       video: "https://www.youtube.com/embed/EXAMPLE_VIDEO_ID", // Replace with real video link
+      github: "https://github.com/example/project4",
+       live: "https://example.com/project4",
+     },
   ];
 
   const settings = {
@@ -107,7 +107,8 @@ export default function Projects() {
       <div className="container px-5 py-24 mx-auto">
         <h1
           data-aos="zoom-in"
-          className="sm:text-4xl text-3xl font-bold title-font text-orange-400 mb-12 py-12 text-center"
+          data-aos-delay="300"
+          className="sm:text-5xl text-4xl lg:text-6xl font-bold title-font text-orange-400 mb-12 py-12 text-center"
         >
           Projects
         </h1>

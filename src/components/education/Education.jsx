@@ -99,13 +99,13 @@ export default function Education({ darkMode }) {
       }`}
     >
       <div className="container mx-auto flex flex-col items-center">
-        <h1 className={`text-3xl sm:text-4xl font-bold mb-8 md:mb-12 text-center ${
+        <h1 className={`text-4xl sm:text-5xl lg:text-6xl font-bold mb-8 md:mb-12 text-center relative inline-block ${
           darkMode ? 'text-orange-400' : 'text-orange-600'
         }`}>
           {activeTab}
         </h1>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-12 md:mb-24">
+        <div className="flex flex-wrap justify-center gap-4 mb-12 md:mb-24 ">
           <button
             className={`px-4 py-2 rounded-full font-semibold text-sm md:text-base transition-colors duration-300 ${
               activeTab === "Education"

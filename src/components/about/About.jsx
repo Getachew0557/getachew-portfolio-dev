@@ -6,7 +6,7 @@ export default function About({ darkMode }) {
       <section id="about" className={`relative overflow-hidden flex flex-col py-16 md:py-24 lg:py-32 transition-colors duration-300 ${
         darkMode ? 'bg-gray-900 text-gray-100' : 'bg-gray-50 text-gray-900'
       }`}>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-2">
           {/* Animated Title */}
           <div className="flex justify-center mb-12 lg:mb-16">
             <h1
@@ -17,9 +17,9 @@ export default function About({ darkMode }) {
               }`}
             >
               About Me
-              <span className={`absolute -bottom-2 left-0 w-full h-1 animate-pulse ${
+              {/* <span className={`absolute -bottom-2 left-0 w-full h-1 animate-pulse ${
                 darkMode ? 'bg-orange-500' : 'bg-orange-600'
-              }`}></span>
+              }`}></span> */}
             </h1>
           </div>
 

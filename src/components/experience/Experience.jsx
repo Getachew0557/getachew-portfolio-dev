@@ -23,11 +23,14 @@ export default function Experience({ darkMode }) {
       {/* Title Section */}
       <h1
         data-aos="zoom-in"
-        className={`text-3xl sm:text-4xl font-bold mb-24 text-center ${
+        data-aos-delay="300"
+        className={`text-4xl sm:text-5xl lg:text-6xl font-bold mb-32 text-center relative inline-block ${
           darkMode ? 'text-orange-400' : 'text-orange-600'
         }`}
       >
         Experience
+        
+        
       </h1>
 
       {/* Main Experience Container */}
@@ -53,7 +56,7 @@ export default function Experience({ darkMode }) {
             {/* Experience Items with gap */}
             <div className='space-y-12 pl-18 md:pl-32 mt-12 px-12'> {/* Increased padding for gap */}
               {/* First Experience */}
-              <div className="relative">
+              <div className="relative ">
                 <div className={`absolute -left-36 top-4 p-2 rounded-full ${
                   darkMode ? 'bg-gray-800' : 'bg-gray-100'
                 }`}>

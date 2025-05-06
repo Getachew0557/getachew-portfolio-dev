@@ -12,11 +12,12 @@ export default function Contact({ darkMode }) {
     >
       <div className='mx-auto max-w-screen-md'>
         <h1
-          className={`text-3xl sm:text-4xl font-bold mb-8 md:mb-12 text-center ${
+          className={`text-4xl sm:text-5xl font-bold lg:text-6xl mb-8 md:mb-12 text-center ${
             darkMode ? 'text-orange-400' : 'text-orange-600'
           }`}
         >
           Contact Me
+          
         </h1>
         
         <form action='#' className='space-y-6'>

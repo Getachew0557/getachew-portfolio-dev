@@ -21,6 +21,10 @@ export default function Blog({ darkMode }) {
       link: "https://medium.com/@getachewgetu2010/docker-unlocking-the-power-of-containerization-for-developers-f2192b00bf76",
       date: "Dec 2, 2024",
     },
+
+    
+
+    
   ];
 
   return (
@@ -31,7 +35,10 @@ export default function Blog({ darkMode }) {
       }`}
     >
       <div className="container mx-auto text-center">
-        <h1 className={`sm:text-4xl text-3xl font-bold title-font mb-12 ${
+        <h1 
+        data-aos="zoom-in"
+        data-aos-delay="300"
+        className={`text-4xl sm:text-5xl lg:text-6xl font-bold text-center relative inline-block ${
           darkMode ? 'text-orange-400' : 'text-orange-600'
         }`}>
           Blogs
