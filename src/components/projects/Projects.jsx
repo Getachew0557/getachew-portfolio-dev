@@ -16,6 +16,11 @@ import llm2 from "../../assets/dashboard.png"
 import llm3 from "../../assets/llm rag flow.png"
 import llm4 from "../../assets/airflow.png"
 
+import kgat from "../../assets/workflow.png";
+import kgat2 from "../../assets/workflow1.png"
+import kgat3 from "../../assets/workflow2.png"
+import kgat4 from "../../assets/workflow3.png"
+
 export default function Projects() {
   const [activeModal, setActiveModal] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -60,7 +65,18 @@ export default function Projects() {
       github: "https://github.com/example/project4",
        live: "https://example.com/project4",
      },
+
+     {
+      id: 5,
+      image: kgat,
+      title: "AI based Book Recomndation System",
+      description: "Knowledge graph-based book recommendation system",
+      video: "https://www.youtube.com/embed/EXAMPLE_VIDEO_ID", // Replace with real video link
+     github: "https://github.com/Getachew0557/Knowledge-Graph-Attention-Network-Based-Book-Recommendation-System.git",
+      live: "https://getachew0557-knowledge-graph-attention-network-based-app-q5zdkw.streamlit.app/",
+    },
   ];
+  
 
   const settings = {
     dots: true,
