@@ -70,7 +70,7 @@ export default function Projects() {
       id: 5,
       image: kgat,
       title: "AI based Book Recomndation System",
-      description: "Knowledge graph-based book recommendation system",
+      description: "KGAT book recommendation system",
       video: "https://www.youtube.com/embed/EXAMPLE_VIDEO_ID", // Replace with real video link
      github: "https://github.com/Getachew0557/Knowledge-Graph-Attention-Network-Based-Book-Recommendation-System.git",
       live: "https://getachew0557-knowledge-graph-attention-network-based-app-q5zdkw.streamlit.app/",
