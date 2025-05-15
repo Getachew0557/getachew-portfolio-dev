@@ -4,6 +4,7 @@ const cors = require('cors');
 const nodemailer = require('nodemailer');
 const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
+const axios = require('axios');
 const sanitizeHtml = require('sanitize-html');
 
 const app = express();
@@ -17,6 +18,11 @@ app.use(cors({
 }));
 app.use(express.json());
 
+const verifyEmail = async (email) => {
+  const url = `http://apilayer.net/api/check?access_key=${process.env.EMAIL_VERIFICATION_API_KEY}&email=${email}&smtp=1&format=1`;
+  const response = await axios.get(url);
+  return response.data;
+};
 // Rate limiting (5 requests per 15 minutes)
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
@@ -27,13 +33,12 @@ app.use('/api/contact', limiter);
 
 // Email transporter
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
+  host: 'smtp.gmail.com',
+  port: 587,
+  secure: false,
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS
-  },
-  tls: {
-    rejectUnauthorized: false // Only for development, remove in production
   }
 });
 
