@@ -31,17 +31,17 @@ export default function Projects() {
       image: image,
       title: "Fraud Detection System",
       description: "Fraud detection for E-Commerce and Banking Transactions",
-      video: "https://www.youtube.com/embed/d9EqK4NxlhM", 
+      video: "https://www.youtube.com/embed/d9EqK4NxlhM",
       github: "https://github.com/Getachew0557/fraud-detection-ecommerce-banking.git",
       live: "https://frauddetection.vercel.app/",
-      images: [fraud1, fraud2, fraud3, fraud4], 
+      images: [fraud1, fraud2, fraud3, fraud4],
     },
     {
       id: 2,
       image: llm2,
       title: "LLM legal document assistant",
       description: "A Retrieval-Augmented Generation application for querying legal documents",
-      video: "https://www.youtube.com/embed/EXAMPLE_VIDEO_ID", 
+      video: "https://www.youtube.com/embed/EXAMPLE_VIDEO_ID",
       github: "https://github.com/Getachew0557/LLM-legal-document-assistant.git",
       live: "https://example.com/project2",
       images: [llm1, llm2, llm3, llm4]
@@ -51,32 +51,32 @@ export default function Projects() {
       image: credit1,
       title: "Credit scoring and risk model",
       description: " This project focuses on risk classification, credit scoring analysis, and bank loan insights",
-      video: "https://www.youtube.com/embed/PG99-7qm0XY", 
+      video: "https://www.youtube.com/embed/PG99-7qm0XY",
       github: "https://github.com/Getachew0557/Credit-Score-Classifications.git",
       live: "https://credit-score-classifications-1.onrender.com/",
       images: [credit1, credit2]
     },
-     {
-       id: 4,
-       image: image4,
-       title: "Dev Assistant AI Agent",
-       description: "Dev Assistant AI Agent",
-       video: "https://www.youtube.com/embed/EXAMPLE_VIDEO_ID", // Replace with real video link
+    {
+      id: 4,
+      image: image4,
+      title: "Dev Assistant AI Agent",
+      description: "Dev Assistant AI Agent",
+      video: "https://www.youtube.com/embed/EXAMPLE_VIDEO_ID", // Replace with real video link
       github: "https://github.com/example/project4",
-       live: "https://example.com/project4",
-     },
+      live: "https://example.com/project4",
+    },
 
-     {
+    {
       id: 5,
       image: kgat,
       title: "AI based Book Recomndation System",
       description: "KGAT book recommendation system",
       video: "https://www.youtube.com/embed/EXAMPLE_VIDEO_ID", // Replace with real video link
-     github: "https://github.com/Getachew0557/Knowledge-Graph-Attention-Network-Based-Book-Recommendation-System.git",
+      github: "https://github.com/Getachew0557/Knowledge-Graph-Attention-Network-Based-Book-Recommendation-System.git",
       live: "https://getachew0557-knowledge-graph-attention-network-based-app-q5zdkw.streamlit.app/",
     },
   ];
-  
+
 
   const settings = {
     dots: true,
@@ -120,28 +120,28 @@ export default function Projects() {
       id="projects"
       className="relative overflow-hidden flex flex-col text-white body-font"
     >
-      <div className="container px-5 py-24 mx-auto">
+      <div className="container px-4 sm:px-6 lg:px-8 py-16 md:py-24 mx-auto">
         <h1
           data-aos="zoom-in"
           data-aos-delay="300"
-          className="sm:text-5xl text-4xl lg:text-6xl font-bold title-font text-orange-400 mb-12 py-12 text-center"
+          className="sm:text-5xl text-4xl lg:text-6xl font-bold title-font text-orange-400 mb-12 md:mb-16 text-center"
         >
           Projects
         </h1>
         <Slider {...settings}>
           {listProjects.map((project) => (
             <div key={project.id} className="p-4 relative group">
-              <div className="h-full border-2 border-orange-400 shadow-[0_0_15px_rgba(255,165,0,0.7)] border-opacity-60 rounded-lg overflow-hidden">
+              <div className="h-full flex flex-col border-2 border-orange-400 shadow-[0_0_15px_rgba(255,165,0,0.7)] border-opacity-60 rounded-lg overflow-hidden bg-gray-900">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-auto lg:h-48 md:h-36 sm:h-24 object-cover object-center transition-all duration-300 group-hover:scale-110"
+                  className="w-full h-48 sm:h-56 md:h-64 object-cover object-center transition-all duration-300 group-hover:scale-110"
                 />
-                <div className="p-6">
-                  <h2 className="tracking-widest text-xl title-font font-medium text-gray-400 mb-1">
+                <div className="p-6 flex-grow flex flex-col justify-start">
+                  <h2 className="tracking-widest text-xl title-font font-medium text-gray-400 mb-2 line-clamp-1">
                     {project.title}
                   </h2>
-                  <p className="leading-relaxed mb-3">{project.description}</p>
+                  <p className="leading-relaxed mb-3 line-clamp-3 text-sm text-gray-300">{project.description}</p>
                 </div>
               </div>
 

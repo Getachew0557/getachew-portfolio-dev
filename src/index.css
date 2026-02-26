@@ -5,3 +5,19 @@
 html {
     scroll-behavior: smooth;
 }
+
+/* Slick Slider Equal Heights Fix */
+.slick-track {
+    display: flex !important;
+}
+
+.slick-slide {
+    height: inherit !important;
+    display: flex !important;
+    justify-content: center;
+}
+
+.slick-slide > div {
+    display: flex;
+    width: 100%;
+}

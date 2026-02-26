@@ -13,11 +13,10 @@ import img from '../../assets/hero.jpg';
 export default function Hero({ darkMode, toggleDarkMode }) {
   const [text, setText] = useState('');
   const professions = [
-    'AI/Machine Learning Engineer',
+    'AI/ML Engineer',
     'Data Scientist',
     'Full Stack Developer',
-    'Gen AI Engineer',
-    'Researcher',
+    'Academic Researcher',
   ];
   let currentProfessionIndex = 0;
 
@@ -64,10 +63,9 @@ export default function Hero({ darkMode, toggleDarkMode }) {
         className={`hidden md:block h-[500px] w-[500px] lg:h-[680px] lg:w-[680px] bg-gradient-to-r rounded-full
           absolute -top-20 md:-top-40 lg:-top-20 -right-32 md:-right-44 lg:-right-40 transform rotate-12 shadow-lg animate-pulse 
           transition-all duration-300
-          ${
-            darkMode
-              ? 'from-orange-600 via-yellow-500 to-red-400 opacity-20'
-              : 'from-orange-600 via-yellow-900 to-red-300 opacity-15'
+          ${darkMode
+            ? 'from-orange-600 via-yellow-500 to-red-400 opacity-20'
+            : 'from-orange-600 via-yellow-900 to-red-300 opacity-15'
           }`}
       />
 
@@ -106,9 +104,7 @@ export default function Hero({ darkMode, toggleDarkMode }) {
                 className={`text-lg md:text-xl leading-relaxed font-medium 
                   ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}
               >
-                Experienced developer with 3+ years in web development, AI model
-                creation, and full-stack solutions. Passionate about building
-                intelligent applications.
+                Visionary engineer blending Generative AI, machine learning, and full-stack development. Delivering scalable, high-performance systems and turning ambitious ideas into intelligent realities.
               </p>
 
               {/* Social Icons */}
@@ -143,20 +139,18 @@ export default function Hero({ darkMode, toggleDarkMode }) {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`transition-all duration-300 transform hover:scale-125 relative group 
-                      ${
-                        darkMode
-                          ? 'text-gray-300 hover:text-orange-400'
-                          : 'text-gray-700 hover:text-orange-600'
+                      ${darkMode
+                        ? 'text-gray-300 hover:text-orange-400'
+                        : 'text-gray-700 hover:text-orange-600'
                       }`}
                   >
                     {React.cloneElement(social.icon, { size: 28 })}
                     {social.tooltip && (
                       <span
                         className={`absolute bottom-full left-1/2 -translate-x-1/2 mb-2 text-xs px-2 py-1 rounded 
-                          ${
-                            darkMode
-                              ? 'bg-gray-800 text-white'
-                              : 'bg-gray-100 text-gray-900'
+                          ${darkMode
+                            ? 'bg-gray-800 text-white'
+                            : 'bg-gray-100 text-gray-900'
                           } opacity-0 group-hover:opacity-100 transition-opacity duration-200`}
                       >
                         {social.tooltip}
@@ -169,8 +163,8 @@ export default function Hero({ darkMode, toggleDarkMode }) {
           </div>
 
           {/* Right Section - Image */}
-          <div className="relative lg:absolute lg:top-[15%] lg:right-[0.02%] md:w-1/2 w-5/6 mb-8 md:mb-0">
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 mx-auto lg:ml-auto">
+          <div className="md:w-1/2 w-full mt-12 md:mt-0 flex justify-center md:justify-end">
+            <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px]">
               <div
                 className={`absolute inset-0 rounded-full blur-xl animate-pulse 
                   ${darkMode ? 'bg-orange-500/20' : 'bg-orange-900/15'}`}
@@ -179,11 +173,10 @@ export default function Hero({ darkMode, toggleDarkMode }) {
                 src={img}
                 alt="Getachew"
                 className={`object-cover object-center rounded-full w-full h-full border-4 
-                    ${
-                      darkMode
-                        ? 'border-orange-500/30 hover:border-orange-500'
-                        : 'border-orange-700/30 hover:border-orange-900'
-                    } transition-all duration-300 shadow-xl`}
+                    ${darkMode
+                    ? 'border-orange-500/30 hover:border-orange-500'
+                    : 'border-orange-700/30 hover:border-orange-900'
+                  } transition-all duration-300 shadow-xl relative z-10`}
               />
             </div>
           </div>

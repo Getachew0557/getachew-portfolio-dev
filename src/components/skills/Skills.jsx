@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { 
-  FaPython, FaReact, FaHtml5, FaCss3Alt, FaNodeJs, FaDocker, FaGitAlt, 
-  FaSlack, FaJira, FaBootstrap, FaBrain, FaCommentDots, FaEye, FaRobot 
+import {
+  FaPython, FaReact, FaHtml5, FaCss3Alt, FaNodeJs, FaDocker, FaGitAlt,
+  FaSlack, FaJira, FaBootstrap, FaBrain, FaCommentDots, FaEye, FaRobot
 } from 'react-icons/fa';
-import { 
-  SiJavascript, SiPostgresql, SiMongodb, SiTensorflow, SiNumpy, SiPandas, 
-  SiKeras, SiPytorch, SiScikitlearn, SiTailwindcss, SiStreamlit, SiJenkins, 
-  SiTrello, SiApachekafka, SiApacheairflow, SiHuggingface, SiOpenai 
+import {
+  SiJavascript, SiPostgresql, SiMongodb, SiTensorflow, SiNumpy, SiPandas,
+  SiKeras, SiPytorch, SiScikitlearn, SiTailwindcss, SiStreamlit, SiJenkins,
+  SiTrello, SiApachekafka, SiApacheairflow, SiHuggingface, SiOpenai
 } from 'react-icons/si';
 
 export default function Skills({ darkMode }) {
@@ -27,7 +27,7 @@ export default function Skills({ darkMode }) {
       { name: 'Keras', icon: <SiKeras size={40} className="text-red-500" /> },
       { name: 'Hugging Face', icon: <SiHuggingface size={40} className="text-yellow-300" /> },
       { name: 'Kafka', icon: <SiApachekafka size={40} className="text-red-500" /> },
-      { name: 'Airflow', icon: <SiApacheairflow size={40} className="text-teal-500" />},
+      { name: 'Airflow', icon: <SiApacheairflow size={40} className="text-teal-500" /> },
 
 
 
@@ -55,23 +55,21 @@ export default function Skills({ darkMode }) {
   };
 
   return (
-    <section 
-      id="skills" 
-      className={`relative overflow-hidden flex flex-col py-16 md:py-24 px-4 sm:px-6 transition-colors duration-300 ${
-        darkMode ? 'bg-gray-900 text-gray-100' : 'bg-gray-50 text-gray-900'
-      }`}
+    <section
+      id="skills"
+      className={`relative overflow-hidden flex flex-col py-16 md:py-24 transition-colors duration-300 ${darkMode ? 'bg-gray-900 text-gray-100' : 'bg-gray-50 text-gray-900'
+        }`}
     >
-      <div className="container mx-auto flex flex-col items-center">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
         {/* Section Title */}
         <h1
           data-aos="zoom-in"
           data-aos-delay="300"
-          className={`text-4xl sm:text-5xl lg:text-6xl font-bold mb-8 md:mb-12 text-center relative inline-block ${
-            darkMode ? 'text-orange-400' : 'text-orange-600'
-          }`}
+          className={`text-4xl sm:text-5xl lg:text-6xl font-bold mb-12 md:mb-16 text-center relative inline-block ${darkMode ? 'text-orange-400' : 'text-orange-600'
+            }`}
         >
           Skills
-          
+
         </h1>
 
         {/* Skill Category Buttons - Mobile Responsive */}
@@ -79,15 +77,14 @@ export default function Skills({ darkMode }) {
           {Object.keys(skillData).map((skill) => (
             <button
               key={skill}
-              className={`px-4 py-2 text-sm md:text-base md:px-6 md:py-2 rounded-full font-semibold transition-colors duration-300 ${
-                activeSkill === skill
-                  ? darkMode 
-                    ? 'bg-orange-500 text-white' 
+              className={`px-4 py-2 text-sm md:text-base md:px-6 md:py-2 rounded-full font-semibold transition-colors duration-300 ${activeSkill === skill
+                  ? darkMode
+                    ? 'bg-orange-500 text-white'
                     : 'bg-orange-600 text-white'
-                  : darkMode 
-                    ? 'bg-gray-800 hover:bg-gray-700 text-gray-300' 
+                  : darkMode
+                    ? 'bg-gray-800 hover:bg-gray-700 text-gray-300'
                     : 'bg-gray-200 hover:bg-gray-300 text-gray-700'
-              }`}
+                }`}
               onClick={() => setActiveSkill(skill)}
             >
               {skill}
@@ -98,8 +95,8 @@ export default function Skills({ darkMode }) {
         {/* Active Skill Technology List - Grid Layout */}
         <div className="w-full grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 px-4">
           {skillData[activeSkill].map((tech, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="flex flex-col items-center justify-center p-4 transform transition-all duration-300 
                 hover:scale-105 hover:shadow-lg rounded-xl"
               data-aos="fade-up"
@@ -108,9 +105,8 @@ export default function Skills({ darkMode }) {
               <div className={`p-4 rounded-full ${darkMode ? 'bg-gray-800' : 'bg-gray-100'}`}>
                 {tech.icon}
               </div>
-              <p className={`mt-4 text-center text-sm md:text-base font-medium ${
-                darkMode ? 'text-gray-300' : 'text-gray-700'
-              }`}>
+              <p className={`mt-4 text-center text-sm md:text-base font-medium ${darkMode ? 'text-gray-300' : 'text-gray-700'
+                }`}>
                 {tech.name}
               </p>
             </div>
