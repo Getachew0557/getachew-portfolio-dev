@@ -46,17 +46,16 @@ export default function About({ darkMode }) {
             data-aos-delay="400"
             className="w-full lg:w-1/2 flex flex-col space-y-6 text-justify"
           >
-            <div className="space-y-4">
-              <p className={`text-lg md:text-xl leading-relaxed font-medium ${darkMode ? 'text-gray-300' : 'text-gray-700'
+            <div className="space-y-6">
+              <p className={`text-lg md:text-xl leading-relaxed ${darkMode ? 'text-gray-300' : 'text-gray-700'
                 }`}>
-                Greetings! I'm <span className={`font-bold ${darkMode ? 'text-orange-500' : 'text-orange-600'
-                  }`}>Getachew Getu</span>, an innovative
-                <span className={`${darkMode ? 'text-orange-400' : 'text-orange-500'}`}> GenAI Engineer</span>,
-                <span className={`${darkMode ? 'text-orange-400' : 'text-orange-500'}`}> Machine Learning Enthusiast</span>, and
-                <span className={`${darkMode ? 'text-orange-400' : 'text-orange-500'}`}> Full Stack Developer</span>. I architect robust, intelligent solutions that bridge the gap between cutting-edge AI research and real-world software applications.
+                Greetings! I'm <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">Getachew Getu</span>, an innovative
+                <span className={`font-semibold ${darkMode ? 'text-gray-100' : 'text-gray-900'}`}> GenAI Engineer</span>,
+                <span className={`font-semibold ${darkMode ? 'text-gray-100' : 'text-gray-900'}`}> Machine Learning Enthusiast</span>, and
+                <span className={`font-semibold ${darkMode ? 'text-gray-100' : 'text-gray-900'}`}> Full Stack Developer</span>. I architect robust, intelligent solutions that bridge the gap between cutting-edge AI research and real-world software applications.
               </p>
 
-              <p className={`text-lg md:text-xl leading-relaxed font-medium ${darkMode ? 'text-gray-300' : 'text-gray-700'
+              <p className={`text-lg md:text-xl leading-relaxed ${darkMode ? 'text-gray-400' : 'text-gray-600'
                 }`}>
                 Armed with expertise in modern frameworks and scalable architectures, my mission is to drive digital transformation. Whether it's training LLMs, deploying machine learning pipelines, or building beautifully responsive web apps, I thrive on turning complex concepts into high-impact digital experiences.
               </p>

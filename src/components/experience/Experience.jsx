@@ -15,12 +15,10 @@ export default function Experience({ darkMode }) {
       <h1
         data-aos="zoom-in"
         data-aos-delay="300"
-        className={`text-4xl sm:text-5xl lg:text-6xl font-bold mb-32 text-center relative inline-block ${darkMode ? 'text-orange-400' : 'text-orange-600'
+        className={`text-4xl sm:text-5xl lg:text-6xl font-bold mb-12 md:mb-16 text-center relative inline-block ${darkMode ? 'text-orange-400' : 'text-orange-600'
           }`}
       >
         Experience
-
-
       </h1>
 
       {/* Main Experience Container */}

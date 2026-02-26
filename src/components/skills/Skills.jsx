@@ -78,12 +78,12 @@ export default function Skills({ darkMode }) {
             <button
               key={skill}
               className={`px-4 py-2 text-sm md:text-base md:px-6 md:py-2 rounded-full font-semibold transition-colors duration-300 ${activeSkill === skill
-                  ? darkMode
-                    ? 'bg-orange-500 text-white'
-                    : 'bg-orange-600 text-white'
-                  : darkMode
-                    ? 'bg-gray-800 hover:bg-gray-700 text-gray-300'
-                    : 'bg-gray-200 hover:bg-gray-300 text-gray-700'
+                ? darkMode
+                  ? 'bg-orange-500 text-white'
+                  : 'bg-orange-600 text-white'
+                : darkMode
+                  ? 'bg-gray-800 hover:bg-gray-700 text-gray-300'
+                  : 'bg-gray-200 hover:bg-gray-300 text-gray-700'
                 }`}
               onClick={() => setActiveSkill(skill)}
             >
