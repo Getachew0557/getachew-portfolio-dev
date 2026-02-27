@@ -29,7 +29,7 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-3 md:py-4">
         <div className="flex items-center justify-between">
           {/* Brand Name */}
-          <a href="#home" className={`text-xl md:text-2xl font-bold transition-colors
+          <a href="#home" className={`font-outfit text-2xl md:text-3xl font-bold transition-colors
             ${darkMode ? 'text-gray-100 hover:text-orange-400' : 'text-gray-900 hover:text-orange-600'}`}>
             Getachew
           </a>
@@ -41,7 +41,7 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
                 <a
                   key={item.name}
                   href={item.link}
-                  className={` text-lg md:text-xl font-medium transition-colors  
+                  className={`font-outfit text-base md:text-lg font-medium transition-colors  
                     ${darkMode ? 'text-gray-300 hover:text-orange-400' : 'text-gray-600 hover:text-orange-600'}`}
                 >
                   {item.name}

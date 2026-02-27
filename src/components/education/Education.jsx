@@ -94,11 +94,21 @@ export default function Education({ darkMode }) {
   return (
     <section
       id="education"
-      className={`relative overflow-hidden flex flex-col py-16 md:py-24 px-4 sm:px-6 lg:px-8 transition-colors duration-300 ${darkMode ? 'bg-gray-900 text-gray-100' : 'bg-gray-50 text-gray-900'
+      className={`relative overflow-hidden flex flex-col py-12 md:py-24 px-4 sm:px-6 lg:px-8 transition-colors duration-300 ${darkMode ? 'bg-gray-900 text-gray-100' : 'bg-gray-50 text-gray-900'
         }`}
     >
+      {/* Background Decorative Element */}
+      <div
+        className={`hidden md:block h-[300px] w-[300px] lg:h-[400px] lg:w-[400px] bg-gradient-to-r rounded-full
+          absolute top-20 -left-20 transform -rotate-45 shadow-lg animate-pulse 
+          transition-all duration-300
+          ${darkMode
+            ? 'from-blue-600 via-purple-500 to-teal-400 opacity-10'
+            : 'from-blue-600 via-purple-900 to-teal-300 opacity-5'
+          }`}
+      />
       <div className="container mx-auto flex flex-col items-center">
-        <h1 className={`text-4xl sm:text-5xl lg:text-6xl font-bold mb-8 md:mb-12 text-center relative inline-block ${darkMode ? 'text-orange-400' : 'text-orange-600'
+        <h1 className={`font-outfit text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-10 md:mb-16 text-center relative inline-block ${darkMode ? 'text-orange-400' : 'text-orange-600'
           }`}>
           {activeTab}
         </h1>
@@ -144,7 +154,7 @@ export default function Education({ darkMode }) {
                   data-aos="fade-up"
                 >
                   <div className={`w-1/2 p-6 ${index % 2 === 0 ? 'pr-16' : 'pl-16'}`}>
-                    <div className={`relative rounded-xl p-8 shadow-xl transition-all hover:shadow-2xl ${darkMode ? 'bg-gray-800' : 'bg-white'
+                    <div className={`relative rounded-2xl p-8 transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl ${darkMode ? 'bg-gray-800/80 glass-card' : 'bg-white/90 glass-card'
                       }`}>
                       <div className={`absolute top-8 -translate-y-1/2 ${index % 2 === 0 ? '-right-24' : '-left-24'
                         }`}>
@@ -155,7 +165,7 @@ export default function Education({ darkMode }) {
                           <FaGraduationCap size={32} className={`${darkMode ? 'text-orange-500' : 'text-orange-600'}`} />
                         </div>
                       </div>
-                      <h2 className={`text-xl font-bold mb-4 ${darkMode ? 'text-orange-400' : 'text-orange-600'}`}>
+                      <h2 className={`font-outfit text-xl font-bold mb-4 ${darkMode ? 'text-orange-400' : 'text-orange-600'}`}>
                         {edu.title}
                       </h2>
                       <h3 className={`text-sm mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
@@ -186,9 +196,9 @@ export default function Education({ darkMode }) {
                       <FaGraduationCap size={24} className={`${darkMode ? 'text-orange-500' : 'text-orange-600'}`} />
                     </div>
                   </div>
-                  <div className={`rounded-xl p-6 shadow-lg ${darkMode ? 'bg-gray-800' : 'bg-white'
+                  <div className={`rounded-2xl p-6 transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl ${darkMode ? 'bg-gray-800/80 glass-card' : 'bg-white/90 glass-card'
                     }`}>
-                    <h2 className={`text-lg font-bold mb-3 ${darkMode ? 'text-orange-400' : 'text-orange-600'}`}>
+                    <h2 className={`font-outfit text-lg font-bold mb-3 ${darkMode ? 'text-orange-400' : 'text-orange-600'}`}>
                       {edu.title}
                     </h2>
                     <h3 className={`text-sm mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>

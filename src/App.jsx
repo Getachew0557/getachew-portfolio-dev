@@ -7,7 +7,7 @@ import About from './components/about/About'
 import Skills from './components/skills/Skills'
 import Experience from './components/experience/Experience'
 import Education from './components/education/Education'
-import Language from './components/language/Language'
+
 import Projects from './components/projects/Projects'
 import Blog from './components/blog/Blog'
 import Contact from './components/contact/Contact'
@@ -43,7 +43,7 @@ export default function App() {
       <Skills darkMode={darkMode} />
       <Experience darkMode={darkMode} />
       <Education darkMode={darkMode} />
-      <Language darkMode={darkMode} />
+
       <Projects darkMode={darkMode} />
       <Blog darkMode={darkMode} />
       <Contact darkMode={darkMode} />

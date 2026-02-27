@@ -17,7 +17,25 @@ html {
     justify-content: center;
 }
 
-.slick-slide > div {
+.slick-slide>div {
     display: flex;
     width: 100%;
+}
+
+@layer utilities {
+    .glass {
+        @apply bg-white/40 dark:bg-gray-900/40 backdrop-blur-xl border border-white/20 dark:border-gray-700/50 shadow-lg;
+    }
+
+    .glass-card {
+        @apply bg-white/40 dark:bg-gray-800/40 backdrop-blur-xl border border-gray-200/50 dark:border-gray-700/50 shadow-xl rounded-2xl;
+    }
+
+    .text-gradient {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-amber-400 dark:from-orange-400 dark:to-yellow-300;
+    }
+
+    .text-gradient-blue {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-blue-400 dark:to-cyan-300;
+    }
 }

@@ -88,25 +88,38 @@ export default function Hero({ darkMode, toggleDarkMode }) {
                 alt="Hi"
               />
               <h1
-                className={`title-font text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-4 
+                className={`title-font text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-8 
                   ${darkMode ? 'text-gray-100' : 'text-gray-900'}`}
               >
-                Hi! I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600">GETACHEW</span>
+                Hi There
               </h1>
               <p
-                className={`text-xl md:text-2xl lg:text-3xl font-semibold mb-6 
+                className={`text-xl md:text-2xl lg:text-3xl font-semibold mb-10
                   ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}
               >
-                I'm a{' '}
+                I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600">GETACHEW</span>, a{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-orange-500">{text}</span>
                 <span className={`animate-pulse ${darkMode ? 'text-gray-500' : 'text-gray-400'}`}>|</span>
               </p>
-              <p
-                className={`text-base md:text-lg lg:text-xl leading-relaxed font-medium max-w-xl mx-auto md:mx-0 mb-8
-                  ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}
-              >
-                Visionary engineer blending Generative AI, machine learning, and full-stack development. Delivering scalable, high-performance systems and turning ambitious ideas into intelligent realities.
-              </p>
+
+              {/* Resume Button - Moved from About */}
+              <div className="flex justify-center md:justify-start mb-10">
+                <a
+                  href="https://drive.google.com/file/d/17Ss_4k20JH12lBalstW5B7xQa9m6LDr/view?usp=drive_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block relative group"
+                >
+                  <div className={`absolute -inset-1 bg-gradient-to-r rounded-full blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200 ${darkMode ? 'from-orange-500 to-amber-600' : 'from-orange-400 to-amber-500'
+                    }`}></div>
+                  <button className={`relative flex items-center justify-center bg-gradient-to-r text-white font-semibold py-3 px-8 rounded-full transform transition-all duration-300 hover:scale-105 hover:shadow-xl ${darkMode ? 'from-orange-500 to-amber-600 hover:shadow-orange-500/30'
+                    : 'from-orange-400 to-amber-500 hover:shadow-orange-400/30'
+                    }`}>
+                    <span className="mr-2">📄</span>
+                    My Resume
+                  </button>
+                </a>
+              </div>
 
               {/* Social Icons */}
               <div className="flex justify-center md:justify-start flex-wrap gap-4 sm:gap-6">
@@ -140,16 +153,16 @@ export default function Hero({ darkMode, toggleDarkMode }) {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`transition-all duration-300 transform hover:-translate-y-2 hover:scale-110 relative group p-3 rounded-full shadow-lg ${darkMode
-                        ? 'bg-gray-800 text-gray-300 hover:text-orange-400 hover:bg-gray-700 hover:shadow-orange-500/20'
-                        : 'bg-white text-gray-700 hover:text-orange-600 hover:bg-orange-50 hover:shadow-orange-500/20'
+                      ? 'bg-gray-800 text-gray-300 hover:text-orange-400 hover:bg-gray-700 hover:shadow-orange-500/20'
+                      : 'bg-white text-gray-700 hover:text-orange-600 hover:bg-orange-50 hover:shadow-orange-500/20'
                       }`}
                   >
                     {React.cloneElement(social.icon, { size: 24 })}
                     {social.tooltip && (
                       <span
                         className={`absolute bottom-full left-1/2 -translate-x-1/2 mb-3 text-xs px-3 py-1.5 rounded-md font-medium shadow-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-300 ${darkMode
-                            ? 'bg-gray-700 text-white'
-                            : 'bg-gray-800 text-white'
+                          ? 'bg-gray-700 text-white'
+                          : 'bg-gray-800 text-white'
                           }`}
                       >
                         {social.tooltip}

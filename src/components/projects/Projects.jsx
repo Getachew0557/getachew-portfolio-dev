@@ -120,25 +120,31 @@ export default function Projects() {
       id="projects"
       className="relative overflow-hidden flex flex-col text-white body-font"
     >
-      <div className="container px-4 sm:px-6 lg:px-8 py-16 md:py-24 mx-auto">
+      {/* Background Decorative Element */}
+      <div
+        className={`hidden md:block h-[400px] w-[400px] lg:h-[550px] lg:w-[550px] bg-gradient-to-r rounded-full
+          absolute top-40 -right-20 transform rotate-12 shadow-lg animate-pulse 
+          transition-all duration-300 opacity-10 from-orange-600 via-red-500 to-amber-400`}
+      />
+      <div className="container px-4 sm:px-6 lg:px-8 py-12 md:py-24 mx-auto">
         <h1
           data-aos="zoom-in"
           data-aos-delay="300"
-          className="sm:text-5xl text-4xl lg:text-6xl font-bold title-font text-orange-400 mb-12 md:mb-16 text-center"
+          className="font-outfit text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-10 md:mb-16 text-center"
         >
-          Projects
+          My <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600">Projects</span>
         </h1>
         <Slider {...settings}>
           {listProjects.map((project) => (
             <div key={project.id} className="p-4 relative group">
-              <div className="h-full flex flex-col border-2 border-orange-400 shadow-[0_0_15px_rgba(255,165,0,0.7)] border-opacity-60 rounded-lg overflow-hidden bg-gray-900">
+              <div className={`h-full flex flex-col transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl rounded-2xl overflow-hidden glass-card`}>
                 <img
                   src={project.image}
                   alt={project.title}
                   className="w-full h-48 sm:h-56 md:h-64 object-cover object-center transition-all duration-300 group-hover:scale-110"
                 />
                 <div className="p-6 flex-grow flex flex-col justify-start">
-                  <h2 className="tracking-widest text-xl title-font font-medium text-gray-400 mb-2 line-clamp-1">
+                  <h2 className={`font-outfit tracking-widest text-xl font-bold mb-2 line-clamp-1`}>
                     {project.title}
                   </h2>
                   <p className="leading-relaxed mb-3 line-clamp-3 text-sm text-gray-300">{project.description}</p>

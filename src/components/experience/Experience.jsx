@@ -1,21 +1,31 @@
 import React from 'react';
 import img_experience from '../../assets/img_experience.png';
-import { FaReact, FaAws, FaGitAlt, FaCogs } from 'react-icons/fa';
+import { FaReact, FaAws, FaGitAlt, FaCogs, FaPython, FaShieldAlt, FaRobot, FaMicrophone, FaChalkboardTeacher } from 'react-icons/fa';
 
 export default function Experience({ darkMode }) {
   return (
     <section
       id='experience'
-      className={`relative overflow-hidden flex flex-col py-16 md:py-24 transition-colors duration-300 ${darkMode ? 'bg-gray-900 text-gray-100' : 'bg-gray-50 text-gray-900'
+      className={`relative overflow-hidden flex flex-col py-12 md:py-24 transition-colors duration-300 ${darkMode ? 'bg-gray-900 text-gray-100' : 'bg-gray-50 text-gray-900'
         }`}
     >
+      {/* Background Decorative Element */}
+      <div
+        className={`hidden md:block h-[350px] w-[350px] lg:h-[450px] lg:w-[450px] bg-gradient-to-r rounded-full
+          absolute -bottom-20 -right-20 transform rotate-12 shadow-lg animate-pulse 
+          transition-all duration-300
+          ${darkMode
+            ? 'from-orange-600 via-yellow-500 to-red-400 opacity-10'
+            : 'from-orange-600 via-yellow-900 to-red-300 opacity-5'
+          }`}
+      />
 
 
       {/* Title Section */}
       <h1
         data-aos="zoom-in"
         data-aos-delay="300"
-        className={`text-4xl sm:text-5xl lg:text-6xl font-bold mb-12 md:mb-16 text-center relative inline-block ${darkMode ? 'text-orange-400' : 'text-orange-600'
+        className={`font-outfit text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-10 md:mb-16 text-center relative inline-block ${darkMode ? 'text-orange-400' : 'text-orange-600'
           }`}
       >
         Experience
@@ -42,91 +52,96 @@ export default function Experience({ darkMode }) {
 
             {/* Experience Items with gap */}
             <div className='space-y-16'>
-              {/* First Experience */}
+              {/* First Experience: INSA */}
               <div className="relative">
                 <div className={`absolute -left-[54px] md:-left-[70px] top-6 p-2 rounded-full border-4 z-10 ${darkMode ? 'bg-gray-800 border-orange-500' : 'bg-white border-orange-600'
                   }`}>
-                  <FaCogs className={`text-xl ${darkMode ? 'text-orange-500' : 'text-orange-600'
+                  <FaShieldAlt className={`text-xl ${darkMode ? 'text-orange-500' : 'text-orange-600'
                     }`} />
                 </div>
-                <div className={`p-6 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-white shadow-lg'
+                <div className={`p-8 transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl ${darkMode ? 'bg-gray-800/80 glass-card' : 'bg-white/90 glass-card'
                   }`}>
-                  <h2 className={`text-xl font-bold mb-2 ${darkMode ? 'text-gray-100' : 'text-gray-900'
-                    }`}>
-                    Software Application Developer
-                  </h2>
-                  <h3 className={`text-lg mb-2 ${darkMode ? 'text-orange-400' : 'text-orange-600'
-                    }`}>
-                    Information Network Security Administration (INSA)
-                  </h3>
-                  <p className={`text-sm mb-4 ${darkMode ? 'text-gray-400' : 'text-gray-600'
-                    }`}>
-                    March 2023 - Ongoing - Addis Ababa, Ethiopia
-                  </p>
-                  <ul className='space-y-4'>
-                    {[
-                      { icon: <FaReact />, text: 'Developed scalable web applications using Python and AWS' },
-                      { icon: <FaAws />, text: 'Contributed to Web Application Firewall and Antivirus systems' },
-                      { icon: <FaGitAlt />, text: 'Implemented CI/CD pipelines using Git' },
-                      { icon: <FaAws />, text: 'Integrated ML models for threat intelligence' },
-                    ].map((item, index) => (
-                      <li
-                        key={index}
-                        className="flex items-start space-x-3"
-                      >
-                        <span className={`shrink-0 mt-1 ${darkMode ? 'text-orange-500' : 'text-orange-600'
-                          }`}>
-                          {item.icon}
-                        </span>
-                        <span className={`${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                          {item.text}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                    <div className="flex-1">
+                      <h2 className={`font-outfit text-xl md:text-2xl font-bold mb-1 ${darkMode ? 'text-gray-100' : 'text-gray-900'
+                        }`}>
+                        AI Engineer | Application Software Developer
+                      </h2>
+                      <h3 className={`font-outfit text-lg font-semibold ${darkMode ? 'text-gray-300' : 'text-gray-700'
+                        }`}>
+                        Information Network Security Administration (INSA)
+                      </h3>
+                    </div>
+                    <div className="flex flex-col md:items-end gap-1">
+                      <p className={`text-sm font-semibold text-orange-500 whitespace-nowrap`}>
+                        April 2023 – Present | Full-time
+                      </p>
+                      <p className={`text-sm flex items-center gap-1 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                        <span>📍</span> Addis Ababa, Ethiopia
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              {/* Second Experience with spacing */}
+              {/* Second Experience: UNDP */}
+              <div className="relative">
+                <div className={`absolute -left-[54px] md:-left-[70px] top-6 p-2 rounded-full border-4 z-10 ${darkMode ? 'bg-gray-800 border-orange-500' : 'bg-white border-orange-600'
+                  }`}>
+                  <FaRobot className={`text-xl ${darkMode ? 'text-orange-500' : 'text-orange-600'
+                    }`} />
+                </div>
+                <div className={`p-8 transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl ${darkMode ? 'bg-gray-800/80 glass-card' : 'bg-white/90 glass-card'
+                  }`}>
+                  <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                    <div className="flex-1">
+                      <h2 className={`font-outfit text-xl md:text-2xl font-bold mb-1 ${darkMode ? 'text-gray-100' : 'text-gray-900'
+                        }`}>
+                        Agentic AI Trainer
+                      </h2>
+                      <h3 className={`font-outfit text-lg font-semibold ${darkMode ? 'text-gray-300' : 'text-gray-700'
+                        }`}>
+                        UNDP
+                      </h3>
+                    </div>
+                    <div className="flex flex-col md:items-end gap-1">
+                      <p className={`text-sm font-semibold text-orange-500 whitespace-nowrap`}>
+                        Sept 2025 – Present | Part-time
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Third Experience: Moti Engineering */}
               <div className="relative">
                 <div className={`absolute -left-[54px] md:-left-[70px] top-6 p-2 rounded-full border-4 z-10 ${darkMode ? 'bg-gray-800 border-orange-500' : 'bg-white border-orange-600'
                   }`}>
                   <FaCogs className={`text-xl ${darkMode ? 'text-orange-500' : 'text-orange-600'
                     }`} />
                 </div>
-                <div className={`p-6 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-white shadow-lg'
+                <div className={`p-8 transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl ${darkMode ? 'bg-gray-800/80 glass-card' : 'bg-white/90 glass-card'
                   }`}>
-                  <h2 className={`text-xl font-bold mb-2 ${darkMode ? 'text-gray-100' : 'text-gray-900'
-                    }`}>
-                    Junior Software Support Engineer
-                  </h2>
-                  <h3 className={`text-lg mb-2 ${darkMode ? 'text-orange-400' : 'text-orange-600'
-                    }`}>
-                    Moti Engineering PLC
-                  </h3>
-                  <p className={`text-sm mb-4 ${darkMode ? 'text-gray-400' : 'text-gray-600'
-                    }`}>
-                    December 2022 - March 2023 - Addis Ababa, Ethiopia
-                  </p>
-                  <ul className='space-y-4'>
-                    {[
-                      { icon: <FaReact />, text: 'Developed Voice Guidance application' },
-                      { icon: <FaReact />, text: 'Conducted software training sessions' },
-                    ].map((item, index) => (
-                      <li
-                        key={index}
-                        className="flex items-start space-x-3"
-                      >
-                        <span className={`shrink-0 mt-1 ${darkMode ? 'text-orange-500' : 'text-orange-600'
-                          }`}>
-                          {item.icon}
-                        </span>
-                        <span className={`${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                          {item.text}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                    <div className="flex-1">
+                      <h2 className={`font-outfit text-xl md:text-2xl font-bold mb-1 ${darkMode ? 'text-gray-100' : 'text-gray-900'
+                        }`}>
+                        Junior Software Engineer
+                      </h2>
+                      <h3 className={`font-outfit text-lg font-semibold ${darkMode ? 'text-gray-300' : 'text-gray-700'
+                        }`}>
+                        Moti Engineering Plc
+                      </h3>
+                    </div>
+                    <div className="flex flex-col md:items-end gap-1">
+                      <p className={`text-sm font-semibold text-orange-500 whitespace-nowrap`}>
+                        Dec 2022 – April 2023 | Full-time
+                      </p>
+                      <p className={`text-sm flex items-center gap-1 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                        <span>📍</span> Addis Ababa, Ethiopia
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
