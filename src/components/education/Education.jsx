@@ -113,28 +113,28 @@ export default function Education({ darkMode }) {
           {activeTab}
         </h1>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-12 md:mb-24 ">
+        <div className="flex flex-wrap justify-center gap-4 mb-12 md:mb-24">
           <button
-            className={`px-4 py-2 rounded-full font-semibold text-sm md:text-base transition-colors duration-300 ${activeTab === "Education"
+            className={`px-4 py-2 rounded-full font-semibold text-sm md:text-base transition-all duration-300 ${activeTab === "Education"
               ? darkMode
-                ? 'bg-orange-500 text-white'
-                : 'bg-orange-600 text-white'
+                ? 'bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-lg shadow-orange-500/20'
+                : 'bg-gradient-to-r from-orange-600 to-red-500 text-white shadow-lg shadow-orange-600/20'
               : darkMode
-                ? 'bg-gray-800 hover:bg-gray-700 text-gray-300'
-                : 'bg-gray-200 hover:bg-gray-300 text-gray-700'
+                ? 'bg-gray-800/80 hover:bg-gray-700 text-gray-300 glass'
+                : 'bg-white/80 hover:bg-white text-gray-700 glass shadow-md'
               }`}
             onClick={() => setActiveTab("Education")}
           >
             Education
           </button>
           <button
-            className={`px-4 py-2 rounded-full font-semibold text-sm md:text-base transition-colors duration-300 ${activeTab === "Certification"
+            className={`px-4 py-2 rounded-full font-semibold text-sm md:text-base transition-all duration-300 ${activeTab === "Certification"
               ? darkMode
-                ? 'bg-orange-500 text-white'
-                : 'bg-orange-600 text-white'
+                ? 'bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-lg shadow-orange-500/20'
+                : 'bg-gradient-to-r from-orange-600 to-red-500 text-white shadow-lg shadow-orange-600/20'
               : darkMode
-                ? 'bg-gray-800 hover:bg-gray-700 text-gray-300'
-                : 'bg-gray-200 hover:bg-gray-300 text-gray-700'
+                ? 'bg-gray-800/80 hover:bg-gray-700 text-gray-300 glass'
+                : 'bg-white/80 hover:bg-white text-gray-700 glass shadow-md'
               }`}
             onClick={() => setActiveTab("Certification")}
           >
@@ -220,28 +220,46 @@ export default function Education({ darkMode }) {
             {certificationData.map((cert, index) => (
               <div
                 key={index}
-                className={`flex flex-col items-center p-6 rounded-xl transition-all duration-300 hover:scale-[1.02] ${darkMode
-                  ? 'bg-gray-800 border border-orange-500 hover:shadow-[0_0_15px_rgba(255,165,0,0.3)]'
-                  : 'bg-white border border-orange-400 shadow-lg hover:shadow-xl'
+                className={`group flex flex-col items-center p-6 rounded-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl glass-card ${darkMode
+                  ? 'hover:shadow-orange-500/20'
+                  : 'hover:shadow-orange-600/20'
                   }`}
                 data-aos="fade-up"
                 data-aos-delay={index * 50}
               >
+                {/* Top accent */}
+                <div className={`w-12 h-1 rounded-full mb-5 bg-gradient-to-r ${darkMode ? 'from-orange-500 to-amber-400' : 'from-orange-600 to-red-500'}`} />
                 <a href={cert.link} target="_blank" rel="noopener noreferrer" className="mb-4">
-                  <img
-                    src={cert.logo}
-                    alt={cert.name}
-                    className="w-24 h-24 object-contain hover:scale-105 transition-transform"
-                  />
+                  <div className={`p-3 rounded-full transition-transform duration-300 group-hover:scale-110 ${darkMode ? 'bg-gray-800/80' : 'bg-gray-100/80'}`}>
+                    <img
+                      src={cert.logo}
+                      alt={cert.name}
+                      className="w-16 h-16 object-contain"
+                    />
+                  </div>
                 </a>
                 <div className="text-center">
-                  <h3 className={`text-base font-medium ${darkMode ? 'text-gray-100' : 'text-gray-900'}`}>
+                  <h3 className={`text-sm font-semibold mb-1 ${darkMode ? 'text-gray-100' : 'text-gray-900'}`}>
                     {cert.name}
                   </h3>
-                  <p className={`mt-2 text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                  <span className={`inline-block text-xs px-2.5 py-0.5 rounded-full font-medium ${darkMode
+                    ? 'bg-orange-500/20 text-orange-400 border border-orange-500/30'
+                    : 'bg-orange-100 text-orange-600 border border-orange-200'
+                    }`}>
                     {cert.institution}
-                  </p>
+                  </span>
                 </div>
+                <a
+                  href={cert.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`mt-4 text-xs font-semibold flex items-center gap-1 transition-colors ${darkMode ? 'text-orange-400 hover:text-orange-300' : 'text-orange-600 hover:text-orange-700'}`}
+                >
+                  View Certificate
+                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
               </div>
             ))}
           </div>
