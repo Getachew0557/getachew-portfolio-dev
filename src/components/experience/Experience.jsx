@@ -65,23 +65,18 @@ export default function Experience({ darkMode }) {
         darkMode ? 'bg-gray-900 text-gray-100' : 'bg-gray-50 text-gray-900'
       }`}
     >
-      {/* Background Decorative Element */}
-      <div
-        className={`hidden md:block h-[250px] w-[250px] lg:h-[350px] lg:w-[350px] bg-gradient-to-r rounded-full
-          absolute -bottom-20 -right-20 transform rotate-12 shadow-lg animate-pulse 
-          transition-all duration-300
-          ${
-            darkMode
-              ? 'from-orange-600 via-yellow-500 to-red-400 opacity-10'
-              : 'from-orange-600 via-yellow-900 to-red-300 opacity-5'
-          }`}
-      />
+      {/* Glassmorphism mesh blobs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className={`blob-float absolute -bottom-20 -right-20 w-96 h-96 rounded-full blur-3xl opacity-30 ${darkMode ? 'bg-gradient-to-tl from-indigo-600 to-violet-500' : 'bg-gradient-to-tl from-indigo-400 to-violet-300'}`} />
+        <div className={`blob-float-slow absolute top-10 -left-20 w-80 h-80 rounded-full blur-3xl opacity-20 ${darkMode ? 'bg-gradient-to-br from-sky-500 to-cyan-400' : 'bg-gradient-to-br from-sky-400 to-cyan-300'}`} />
+        <div className={`blob-float-drift absolute top-1/2 right-1/4 w-60 h-60 rounded-full blur-3xl opacity-15 ${darkMode ? 'bg-gradient-to-r from-rose-500 to-pink-400' : 'bg-gradient-to-r from-rose-400 to-pink-300'}`} />
+      </div>
 
       {/* Title Section */}
       <h1
         data-aos="zoom-in"
         data-aos-delay="300"
-        className={`font-outfit text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-8 md:mb-12 text-center relative inline-block ${
+        className={`font-outfit text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6 md:mb-12 text-center relative inline-block ${
           darkMode ? 'text-orange-400' : 'text-orange-600'
         }`}
       >
@@ -92,8 +87,8 @@ export default function Experience({ darkMode }) {
       <div className='container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col xl:flex-row items-center xl:items-start'>
         {/* Image Container */}
         <div data-aos='fade-right' data-aos-delay='400' className='relative xl:sticky xl:top-24 lg:max-w-md lg:w-full md:w-1/2 w-5/6 mb-12 xl:mb-0 xl:mr-10'>
-          <div className='md:h-[450px] h-[350px] md:w-[300px] w-[250px] xl:mx-auto bg-gradient-to-r from-orange-600 via-yellow-500 to-red-400 absolute rounded-md transform rotate-3 -top-6 shadow-[0_0_30px_rgba(225,165,0,0.6)] z-0'></div>
-          <img src={img_experience} className='object-cover md:w-[280px] md:h-[430px] xl:mx-auto object-center rounded relative z-10' alt="Experience" />
+          <div className={`md:h-[450px] h-[350px] md:w-[300px] w-[250px] xl:mx-auto absolute rounded-2xl transform rotate-3 -top-6 z-0 backdrop-blur-xl border ${darkMode ? 'bg-gradient-to-br from-violet-600/30 to-cyan-500/20 border-violet-500/20 shadow-[0_0_40px_rgba(139,92,246,0.2)]' : 'bg-gradient-to-br from-indigo-200/40 to-cyan-100/30 border-indigo-200/40 shadow-[0_0_40px_rgba(99,102,241,0.15)]'}`}></div>
+          <img src={img_experience} className='object-cover md:w-[280px] md:h-[430px] xl:mx-auto object-center rounded-xl relative z-10' alt="Experience" />
         </div>
 
         {/* Experience Timeline */}

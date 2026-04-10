@@ -97,23 +97,19 @@ export default function Education({ darkMode }) {
       className={`relative overflow-hidden flex flex-col py-12 md:py-24 px-4 sm:px-6 lg:px-8 transition-colors duration-300 ${darkMode ? 'bg-gray-900 text-gray-100' : 'bg-gray-50 text-gray-900'
         }`}
     >
-      {/* Background Decorative Element */}
-      <div
-        className={`hidden md:block h-[300px] w-[300px] lg:h-[400px] lg:w-[400px] bg-gradient-to-r rounded-full
-          absolute top-20 -left-20 transform -rotate-45 shadow-lg animate-pulse 
-          transition-all duration-300
-          ${darkMode
-            ? 'from-blue-600 via-purple-500 to-teal-400 opacity-10'
-            : 'from-blue-600 via-purple-900 to-teal-300 opacity-5'
-          }`}
-      />
+      {/* Glassmorphism mesh blobs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className={`blob-float absolute top-10 -left-20 w-96 h-96 rounded-full blur-3xl opacity-30 ${darkMode ? 'bg-gradient-to-br from-teal-600 to-emerald-500' : 'bg-gradient-to-br from-teal-400 to-emerald-300'}`} />
+        <div className={`blob-float-slow absolute -bottom-20 right-0 w-80 h-80 rounded-full blur-3xl opacity-20 ${darkMode ? 'bg-gradient-to-tl from-purple-600 to-fuchsia-500' : 'bg-gradient-to-tl from-purple-400 to-fuchsia-300'}`} />
+        <div className={`blob-float-drift absolute top-1/2 left-1/2 w-56 h-56 rounded-full blur-3xl opacity-15 ${darkMode ? 'bg-gradient-to-r from-blue-500 to-sky-400' : 'bg-gradient-to-r from-blue-400 to-sky-300'}`} />
+      </div>
       <div className="container mx-auto flex flex-col items-center">
-        <h1 className={`font-outfit text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-10 md:mb-16 text-center relative inline-block ${darkMode ? 'text-orange-400' : 'text-orange-600'
+        <h1 className={`font-outfit text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6 md:mb-12 text-center relative inline-block ${darkMode ? 'text-orange-400' : 'text-orange-600'
           }`}>
           {activeTab}
         </h1>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-12 md:mb-24">
+        <div className="flex flex-wrap justify-center gap-4 mb-8 md:mb-16">
           <button
             className={`px-4 py-2 rounded-full font-semibold text-sm md:text-base transition-all duration-300 ${activeTab === "Education"
               ? darkMode

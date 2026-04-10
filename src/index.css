@@ -22,13 +22,35 @@ html {
     width: 100%;
 }
 
+/* Slow floating blob animations */
+@keyframes float-slow {
+    0%, 100% { transform: translateY(0px) translateX(0px) scale(1); }
+    33%       { transform: translateY(-40px) translateX(20px) scale(1.05); }
+    66%       { transform: translateY(20px) translateX(-15px) scale(0.97); }
+}
+
+@keyframes float-slower {
+    0%, 100% { transform: translateY(0px) translateX(0px) scale(1); }
+    40%       { transform: translateY(30px) translateX(-25px) scale(1.04); }
+    70%       { transform: translateY(-20px) translateX(18px) scale(0.96); }
+}
+
+@keyframes float-drift {
+    0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+    50%       { transform: translateY(-30px) translateX(30px) rotate(8deg); }
+}
+
+.blob-float       { animation: float-slow   12s ease-in-out infinite; }
+.blob-float-slow  { animation: float-slower 18s ease-in-out infinite; }
+.blob-float-drift { animation: float-drift  22s ease-in-out infinite; }
+
 @layer utilities {
     .glass {
-        @apply bg-white/40 dark:bg-gray-900/40 backdrop-blur-xl border border-white/20 dark:border-gray-700/50 shadow-lg;
+        @apply bg-white/70 dark:bg-gray-900/40 backdrop-blur-xl border border-white/60 dark:border-gray-700/50 shadow-lg;
     }
 
     .glass-card {
-        @apply bg-white/40 dark:bg-gray-800/40 backdrop-blur-xl border border-gray-200/50 dark:border-gray-700/50 shadow-xl rounded-2xl;
+        @apply bg-white/70 dark:bg-gray-800/40 backdrop-blur-xl border border-gray-200/80 dark:border-gray-700/50 shadow-xl rounded-2xl;
     }
 
     .text-gradient {

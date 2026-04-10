@@ -45,8 +45,11 @@ export default function App() {
       <Education darkMode={darkMode} />
 
       <Projects darkMode={darkMode} />
-      <Blog darkMode={darkMode} />
-      <Contact darkMode={darkMode} />
+      {/* Blog + Contact share one seamless glassmorphism background */}
+      <div className={`relative ${darkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
+        <Blog darkMode={darkMode} />
+        <Contact darkMode={darkMode} />
+      </div>
       <Footer darkMode={darkMode} />
       <Loglib config={{ id: "getachew_vercel" }} />
     </main>

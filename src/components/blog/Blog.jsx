@@ -62,29 +62,24 @@ export default function Blog({ darkMode }) {
   return (
     <section
       id="blog"
-      className={`relative overflow-hidden body-font py-12 md:py-24 px-6 sm:px-12 transition-colors duration-300 ${darkMode ? 'bg-gray-900' : 'bg-gray-50'}`}
+      className={`relative overflow-hidden body-font py-12 md:py-24 px-6 sm:px-12 transition-colors duration-300 ${darkMode ? 'bg-transparent' : 'bg-transparent'}`}
     >
-      {/* Background Decorative Element */}
-      <div
-        className={`hidden md:block h-[350px] w-[350px] lg:h-[450px] lg:w-[450px] bg-gradient-to-r rounded-full
-          absolute -bottom-20 -left-20 transform rotate-12 shadow-lg animate-pulse 
-          transition-all duration-300
-          ${darkMode
-            ? 'from-orange-600 via-yellow-500 to-red-400 opacity-10'
-            : 'from-orange-600 via-yellow-900 to-red-300 opacity-5'
-          }`}
-      />
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className={`blob-float absolute -bottom-20 -left-20 w-96 h-96 rounded-full blur-3xl opacity-30 ${darkMode ? 'bg-gradient-to-tr from-fuchsia-600 to-violet-500' : 'bg-gradient-to-tr from-fuchsia-400 to-violet-300'}`} />
+        <div className={`blob-float-slow absolute -top-20 right-0 w-80 h-80 rounded-full blur-3xl opacity-20 ${darkMode ? 'bg-gradient-to-bl from-cyan-500 to-sky-400' : 'bg-gradient-to-bl from-cyan-400 to-sky-300'}`} />
+        <div className={`blob-float-drift absolute top-1/2 left-1/2 w-60 h-60 rounded-full blur-3xl opacity-15 ${darkMode ? 'bg-gradient-to-r from-emerald-500 to-teal-400' : 'bg-gradient-to-r from-emerald-400 to-teal-300'}`} />
+      </div>
 
       <div className="container mx-auto text-center">
         <h1
           data-aos="zoom-in"
           data-aos-delay="300"
-          className={`font-outfit text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-center relative inline-block ${darkMode ? 'text-orange-400' : 'text-orange-600'}`}
+          className={`font-outfit text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6 md:mb-12 text-center relative inline-block ${darkMode ? 'text-orange-400' : 'text-orange-600'}`}
         >
           Blogs
         </h1>
 
-        <div className="mt-16 sm:mt-24 w-full">
+        <div className="mt-10 md:mt-16 w-full">
           <Slider {...settings}>
             {blogPosts.map((post, index) => (
               <div key={index} className="p-4 relative group h-full">
@@ -97,13 +92,13 @@ export default function Blog({ darkMode }) {
                   data-aos-delay={index * 200}
                 >
                   {/* Top color accent bar */}
-                  <div className={`h-1 w-full bg-gradient-to-r ${darkMode ? 'from-orange-500 to-amber-400' : 'from-orange-600 to-red-500'}`} />
+                  <div className={`h-1 w-full bg-gradient-to-r ${darkMode ? 'from-violet-500 to-cyan-400' : 'from-violet-400 to-cyan-300'}`} />
 
                   <div className="p-6 flex flex-col flex-grow">
                     {/* Tag badge */}
                     <span className={`self-start text-xs font-semibold px-3 py-1 rounded-full mb-4 ${darkMode
-                      ? 'bg-orange-500/20 text-orange-400 border border-orange-500/30'
-                      : 'bg-orange-100 text-orange-600 border border-orange-200'
+                      ? 'bg-violet-500/20 text-violet-300 border border-violet-500/30'
+                      : 'bg-violet-100 text-violet-600 border border-violet-200'
                       }`}>
                       {post.tag}
                     </span>
@@ -116,7 +111,7 @@ export default function Blog({ darkMode }) {
                     </p>
                   </div>
 
-                  <div className={`px-6 py-4 flex items-center justify-between border-t ${darkMode ? 'border-gray-700/50' : 'border-gray-200/50'}`}>
+                  <div className="px-6 py-4 flex items-center justify-between">
                     <span className={`text-xs ${darkMode ? 'text-gray-500' : 'text-gray-400'}`}>
                       {post.date}
                     </span>

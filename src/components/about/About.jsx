@@ -3,25 +3,20 @@ import aboutImage from '../../assets/icon.png';
 
 export default function About({ darkMode }) {
   return (
-    <section id="about" className={`relative overflow-hidden flex flex-col py-12 md:py-24 transition-colors duration-300 ${darkMode ? 'bg-gray-900 text-gray-100' : 'bg-gray-50 text-gray-900'
-      }`}>
-      {/* Background Decorative Element - Similar to Hero */}
-      <div
-        className={`hidden md:block h-[400px] w-[400px] lg:h-[500px] lg:w-[500px] bg-gradient-to-r rounded-full
-          absolute -bottom-20 -left-20 transform -rotate-12 shadow-lg animate-pulse 
-          transition-all duration-300
-          ${darkMode
-            ? 'from-orange-600 via-yellow-500 to-red-400 opacity-10'
-            : 'from-orange-600 via-yellow-900 to-red-300 opacity-5'
-          }`}
-      />
+    <section id="about" className={`relative overflow-hidden flex flex-col py-12 md:py-24 transition-colors duration-300 ${darkMode ? 'bg-gray-900 text-gray-100' : 'bg-gray-50 text-gray-900'}`}>
+      {/* Glassmorphism mesh blobs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className={`blob-float absolute -top-32 -left-32 w-96 h-96 rounded-full blur-3xl opacity-30 ${darkMode ? 'bg-gradient-to-br from-violet-600 to-indigo-500' : 'bg-gradient-to-br from-violet-500 to-indigo-400'}`} />
+        <div className={`blob-float-slow absolute bottom-0 right-0 w-80 h-80 rounded-full blur-3xl opacity-20 ${darkMode ? 'bg-gradient-to-tl from-cyan-500 to-teal-400' : 'bg-gradient-to-tl from-cyan-400 to-teal-300'}`} />
+        <div className={`blob-float-drift absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full blur-3xl opacity-15 ${darkMode ? 'bg-gradient-to-r from-fuchsia-500 to-pink-500' : 'bg-gradient-to-r from-fuchsia-400 to-pink-400'}`} />
+      </div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Animated Title */}
-        <div className="flex justify-center mb-12 md:mb-16">
+        <div className="flex justify-center mb-0">
           <h1
             data-aos="zoom-in"
             data-aos-delay="300"
-            className={`font-outfit text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-center relative inline-block mb-10 md:mb-16 ${darkMode ? 'text-orange-400' : 'text-orange-600'
+            className={`font-outfit text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-center relative inline-block mb-6 md:mb-12 ${darkMode ? 'text-orange-400' : 'text-orange-600'
               }`}
           >
             About Me

@@ -60,22 +60,18 @@ export default function Skills({ darkMode }) {
       className={`relative overflow-hidden flex flex-col py-12 md:py-24 transition-colors duration-300 ${darkMode ? 'bg-gray-900 text-gray-100' : 'bg-gray-50 text-gray-900'
         }`}
     >
-      {/* Background Decorative Element */}
-      <div
-        className={`hidden md:block h-[300px] w-[300px] lg:h-[400px] lg:w-[400px] bg-gradient-to-r rounded-full
-          absolute -top-10 -right-20 transform rotate-45 shadow-lg animate-pulse 
-          transition-all duration-300
-          ${darkMode
-            ? 'from-blue-600 via-purple-500 to-pink-400 opacity-10'
-            : 'from-blue-600 via-purple-900 to-pink-300 opacity-5'
-          }`}
-      />
+      {/* Glassmorphism mesh blobs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className={`blob-float absolute -top-20 -right-20 w-96 h-96 rounded-full blur-3xl opacity-30 ${darkMode ? 'bg-gradient-to-bl from-blue-600 to-cyan-500' : 'bg-gradient-to-bl from-blue-400 to-cyan-300'}`} />
+        <div className={`blob-float-slow absolute bottom-10 -left-20 w-80 h-80 rounded-full blur-3xl opacity-20 ${darkMode ? 'bg-gradient-to-tr from-emerald-500 to-teal-400' : 'bg-gradient-to-tr from-emerald-400 to-teal-300'}`} />
+        <div className={`blob-float-drift absolute top-1/3 right-1/3 w-56 h-56 rounded-full blur-3xl opacity-15 ${darkMode ? 'bg-gradient-to-r from-violet-500 to-purple-500' : 'bg-gradient-to-r from-violet-400 to-purple-300'}`} />
+      </div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
         {/* Section Title */}
         <h1
           data-aos="zoom-in"
           data-aos-delay="300"
-          className={`font-outfit text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-10 md:mb-16 text-center relative inline-block ${darkMode ? 'text-orange-400' : 'text-orange-600'
+          className={`font-outfit text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6 md:mb-12 text-center relative inline-block ${darkMode ? 'text-orange-400' : 'text-orange-600'
             }`}
         >
           Skills
@@ -83,7 +79,7 @@ export default function Skills({ darkMode }) {
         </h1>
 
         {/* Skill Category Buttons - Mobile Responsive */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12 md:mb-24">
+        <div className="flex flex-wrap justify-center gap-4 mb-8 md:mb-16">
           {Object.keys(skillData).map((skill) => (
             <button
               key={skill}

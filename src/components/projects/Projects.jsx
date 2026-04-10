@@ -21,7 +21,7 @@ import kgat2 from "../../assets/workflow1.png"
 import kgat3 from "../../assets/workflow2.png"
 import kgat4 from "../../assets/workflow3.png"
 
-export default function Projects() {
+export default function Projects({ darkMode }) {
   const [activeModal, setActiveModal] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -118,19 +118,18 @@ export default function Projects() {
       data-aos="fade-up"
       data-aos-delay="400"
       id="projects"
-      className="relative overflow-hidden flex flex-col text-white body-font"
+      className={`relative overflow-hidden flex flex-col body-font transition-colors duration-300 ${darkMode ? 'bg-gray-900 text-gray-100' : 'bg-gray-50 text-gray-900'}`}
     >
-      {/* Background Decorative Element */}
-      <div
-        className={`hidden md:block h-[400px] w-[400px] lg:h-[550px] lg:w-[550px] bg-gradient-to-r rounded-full
-          absolute top-40 -right-20 transform rotate-12 shadow-lg animate-pulse 
-          transition-all duration-300 opacity-10 from-orange-600 via-red-500 to-amber-400`}
-      />
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="blob-float absolute top-20 -right-20 w-96 h-96 rounded-full blur-3xl opacity-15 bg-gradient-to-bl from-violet-600 to-indigo-500" />
+        <div className="blob-float-slow absolute -bottom-10 -left-20 w-80 h-80 rounded-full blur-3xl opacity-10 bg-gradient-to-tr from-cyan-500 to-blue-400" />
+        <div className="blob-float-drift absolute top-1/3 left-1/3 w-64 h-64 rounded-full blur-3xl opacity-10 bg-gradient-to-r from-fuchsia-500 to-rose-400" />
+      </div>
       <div className="container px-4 sm:px-6 lg:px-8 py-12 md:py-24 mx-auto">
         <h1
           data-aos="zoom-in"
           data-aos-delay="300"
-          className="font-outfit text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-10 md:mb-16 text-center"
+          className={`font-outfit text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6 md:mb-12 text-center ${darkMode ? 'text-gray-100' : 'text-gray-900'}`}
         >
           My <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600">Projects</span>
         </h1>
@@ -144,10 +143,10 @@ export default function Projects() {
                   className="w-full h-48 sm:h-56 md:h-64 object-cover object-center transition-all duration-300 group-hover:scale-110"
                 />
                 <div className="p-6 flex-grow flex flex-col justify-start">
-                  <h2 className={`font-outfit tracking-widest text-xl font-bold mb-2 line-clamp-1`}>
+                  <h2 className={`font-outfit tracking-widest text-xl font-bold mb-2 line-clamp-1 ${darkMode ? 'text-gray-100' : 'text-gray-900'}`}>
                     {project.title}
                   </h2>
-                  <p className="leading-relaxed mb-3 line-clamp-3 text-sm text-gray-300">{project.description}</p>
+                  <p className={`leading-relaxed mb-3 line-clamp-3 text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>{project.description}</p>
                 </div>
               </div>
 

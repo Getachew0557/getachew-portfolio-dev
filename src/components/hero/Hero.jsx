@@ -58,16 +58,11 @@ export default function Hero({ darkMode, toggleDarkMode }) {
       className={`relative overflow-hidden min-h-screen transition-colors duration-300 flex flex-col
         ${darkMode ? 'bg-gray-900' : 'bg-gray-50'}`}
     >
-      {/* Animated Yellow Circle */}
-      <div
-        className={`hidden md:block h-[500px] w-[500px] lg:h-[680px] lg:w-[680px] bg-gradient-to-r rounded-full
-          absolute -top-20 md:-top-40 lg:-top-20 -right-32 md:-right-44 lg:-right-40 transform rotate-12 shadow-lg animate-pulse 
-          transition-all duration-300
-          ${darkMode
-            ? 'from-orange-600 via-yellow-500 to-red-400 opacity-20'
-            : 'from-orange-600 via-yellow-900 to-red-300 opacity-15'
-          }`}
-      />
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className={`blob-float absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full blur-3xl opacity-30 ${darkMode ? 'bg-gradient-to-bl from-violet-600 via-indigo-500 to-cyan-400' : 'bg-gradient-to-bl from-violet-500 via-indigo-400 to-cyan-300'}`} />
+        <div className={`blob-float-slow absolute bottom-0 -left-20 w-80 h-80 rounded-full blur-3xl opacity-20 ${darkMode ? 'bg-gradient-to-tr from-teal-500 to-emerald-400' : 'bg-gradient-to-tr from-teal-400 to-emerald-300'}`} />
+        <div className={`blob-float-drift absolute top-1/2 left-1/3 w-64 h-64 rounded-full blur-3xl opacity-15 ${darkMode ? 'bg-gradient-to-r from-fuchsia-500 to-pink-400' : 'bg-gradient-to-r from-fuchsia-400 to-pink-300'}`} />
+      </div>
 
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
 
@@ -180,16 +175,16 @@ export default function Hero({ darkMode, toggleDarkMode }) {
           <div className="md:w-1/2 w-full mt-12 md:mt-0 flex justify-center md:justify-end">
             <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px]">
               <div
-                className={`absolute inset-0 rounded-full blur-xl animate-pulse 
-                  ${darkMode ? 'bg-orange-500/20' : 'bg-orange-900/15'}`}
+                className={`absolute inset-0 rounded-full blur-2xl animate-pulse 
+                  ${darkMode ? 'bg-gradient-to-br from-violet-500/25 to-cyan-400/20' : 'bg-gradient-to-br from-violet-300/20 to-cyan-200/15'}`}
               />
               <img
                 src={img}
                 alt="Getachew"
                 className={`object-cover object-center rounded-full w-full h-full border-4 
                     ${darkMode
-                    ? 'border-orange-500/30 hover:border-orange-500'
-                    : 'border-orange-700/30 hover:border-orange-900'
+                    ? 'border-violet-500/30 hover:border-violet-400'
+                    : 'border-indigo-300/40 hover:border-indigo-400'
                   } transition-all duration-300 shadow-xl relative z-10`}
               />
             </div>

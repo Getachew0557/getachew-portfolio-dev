@@ -53,24 +53,17 @@ export default function Contact({ darkMode }) {
   return (
     <section
       id='contact'
-      className={`relative overflow-hidden py-12 md:py-16 px-4 sm:px-6 transition-colors duration-300 ${darkMode ? 'bg-gray-900' : 'bg-gray-50'
-        }`}
+      className={`relative overflow-hidden py-12 md:py-16 px-4 sm:px-6 transition-colors duration-300 bg-transparent`}
       data-aos='fade-up'
       data-aos-delay='400'
     >
-      {/* Background Decorative Element */}
-      <div
-        className={`hidden lg:block h-[300px] w-[300px] bg-gradient-to-r rounded-full
-          absolute -bottom-20 -right-20 transform -rotate-12 shadow-lg animate-pulse
-          transition-all duration-300
-          ${darkMode
-            ? 'from-orange-600 via-yellow-500 to-red-400 opacity-10'
-            : 'from-orange-600 via-yellow-900 to-red-300 opacity-5'
-          }`}
-      />
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className={`blob-float absolute -bottom-20 -right-20 w-80 h-80 rounded-full blur-3xl opacity-30 ${darkMode ? 'bg-gradient-to-tl from-indigo-600 to-violet-500' : 'bg-gradient-to-tl from-indigo-400 to-violet-300'}`} />
+        <div className={`blob-float-slow absolute -top-20 -left-20 w-72 h-72 rounded-full blur-3xl opacity-20 ${darkMode ? 'bg-gradient-to-br from-teal-500 to-cyan-400' : 'bg-gradient-to-br from-teal-400 to-cyan-300'}`} />
+      </div>
       <div className='mx-auto max-w-screen-md'>
         <h1
-          className={`font-outfit text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-10 md:mb-16 text-center ${darkMode ? 'text-orange-400' : 'text-orange-600'
+          className={`font-outfit text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6 md:mb-12 text-center ${darkMode ? 'text-orange-400' : 'text-orange-600'
             }`}
         >
           Contact Me
