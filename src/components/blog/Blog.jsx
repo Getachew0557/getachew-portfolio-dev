@@ -4,29 +4,42 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export default function Blog({ darkMode }) {
-  const blogPosts = [
-    {
-      title: "Natural Language Processing (NLP)",
-      description: "Learn the key principles of Natural Language Processing and how it shapes AI and machine learning.",
-      link: "https://medium.com/@getachewgetu2010/natural-language-processing-nlp-83eb45c440bb",
-      date: "Feb 17, 2024",
-      tag: "AI & ML",
-    },
-    {
-      title: "Introduction the application of machine learning",
-      description: "Explore how machine learning is transforming industries and shaping the future across various sectors.",
-      link: "https://medium.com/@getachewgetu2010/intriduction-the-application-of-machine-learning-58952a2aa86d",
-      date: "June 20, 2024",
-      tag: "Machine Learning",
-    },
-    {
-      title: "Docker",
-      description: "Discover the latest trends and technologies in containerization and orchestration for web development in 2024.",
-      link: "https://medium.com/@getachewgetu2010/docker-unlocking-the-power-of-containerization-for-developers-f2192b00bf76",
-      date: "Dec 2, 2024",
-      tag: "DevOps",
-    },
-  ];
+  const [blogPosts, setBlogPosts] = React.useState([]);
+  const [loading, setLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@getachewgetu2010')
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.items) {
+          const formattedPosts = data.items.map(item => {
+            // Strip HTML tags for the description excerpt
+            const plainTextDesc = item.description.replace(/<[^>]+>/g, '').trim();
+            const decodedDesc = plainTextDesc.replace(/&amp;/g, '&').replace(/&#8217;/g, "'").replace(/&#8220;/g, '"').replace(/&#8221;/g, '"');
+            return {
+              title: item.title,
+              description: decodedDesc.length > 120 ? decodedDesc.substring(0, 120) + '...' : decodedDesc,
+              link: item.link,
+              date: new Date(item.pubDate).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+              }),
+              // Capitalize tag words nicely
+              tag: item.categories && item.categories.length > 0
+                ? item.categories[0].split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
+                : "Technology",
+            };
+          });
+          setBlogPosts(formattedPosts);
+        }
+        setLoading(false);
+      })
+      .catch(error => {
+        console.error("Error fetching Medium articles:", error);
+        setLoading(false);
+      });
+  }, []);
 
   const settings = {
     dots: true,

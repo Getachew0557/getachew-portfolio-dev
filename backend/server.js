@@ -31,16 +31,33 @@ const limiter = rateLimit({
 });
 app.use('/api/contact', limiter);
 
-// Email transporter
-const transporter = nodemailer.createTransport({
+// Email transporter setup supporting both App Password and OAuth2
+const transporterOptions = {
   host: 'smtp.gmail.com',
   port: 587,
   secure: false,
   auth: {
     user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS
   }
-});
+};
+
+// OAuth2 requires a refresh token to generate new access tokens dynamically
+if (
+  process.env.GOOGLE_CLIENT_ID &&
+  process.env.GOOGLE_CLIENT_SECRET &&
+  process.env.GOOGLE_CLIENT_SECRET !== 'change-me' &&
+  process.env.GOOGLE_REFRESH_TOKEN
+) {
+  transporterOptions.auth.type = 'OAuth2';
+  transporterOptions.auth.clientId = process.env.GOOGLE_CLIENT_ID;
+  transporterOptions.auth.clientSecret = process.env.GOOGLE_CLIENT_SECRET;
+  transporterOptions.auth.refreshToken = process.env.GOOGLE_REFRESH_TOKEN;
+} else {
+  // If no refresh token is provided, safely fallback to the App Password
+  transporterOptions.auth.pass = process.env.EMAIL_PASS;
+}
+
+const transporter = nodemailer.createTransport(transporterOptions);
 
 // Validation middleware
 const validateContactInput = (req, res, next) => {

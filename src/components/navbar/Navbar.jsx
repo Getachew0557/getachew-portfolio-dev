@@ -12,6 +12,7 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
     { name: 'Projects', link: '#projects' },
     { name: 'Experience', link: '#experience' },
     { name: 'Education', link: '#education' },
+    { name: 'Blog', link: '#blog' },
     { name: 'Contact', link: '#contact' },
   ]
 

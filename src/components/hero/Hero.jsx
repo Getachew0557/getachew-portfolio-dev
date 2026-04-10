@@ -105,7 +105,7 @@ export default function Hero({ darkMode, toggleDarkMode }) {
               {/* Resume Button - Moved from About */}
               <div className="flex justify-center md:justify-start mb-10">
                 <a
-                  href="https://drive.google.com/file/d/17Ss_4k20JH12lBalstW5B7xQa9m6LDr/view?usp=drive_link"
+                  href="https://drive.google.com/file/d/1PmIk60cX_kA75LdWkk1gndbl8aSiea4a/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block relative group"
@@ -130,7 +130,7 @@ export default function Hero({ darkMode, toggleDarkMode }) {
                   },
                   {
                     icon: <FaLinkedin />,
-                    link: 'https://linkedin.com/in/getachew-getu',
+                    link: 'https://www.linkedin.com/in/getachew-getu-enyew',
                   },
                   {
                     icon: <FaTelegram />,

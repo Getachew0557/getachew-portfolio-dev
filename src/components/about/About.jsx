@@ -36,7 +36,7 @@ export default function About({ darkMode }) {
           <div
             data-aos="fade-right"
             data-aos-delay="400"
-            className="w-full lg:w-1/2 flex justify-center relative group"
+            className="w-full lg:w-1/3 flex justify-center relative group"
           >
             {/* Glow blob */}
             <div className={`absolute inset-0 rounded-full blur-2xl animate-pulse ${darkMode ? 'bg-orange-500/15' : 'bg-orange-600/10'}`} />
@@ -44,7 +44,7 @@ export default function About({ darkMode }) {
               <img
                 src={aboutImage}
                 alt="Getachew Getu"
-                className="object-cover w-60 h-60 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 transform group-hover:scale-[1.03] transition-transform duration-300 rounded-2xl"
+                className="object-cover w-60 h-60 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-full lg:h-auto lg:max-w-[320px] transform group-hover:scale-[1.03] transition-transform duration-300 rounded-2xl"
               />
             </div>
           </div>
@@ -53,17 +53,17 @@ export default function About({ darkMode }) {
           <div
             data-aos="fade-left"
             data-aos-delay="400"
-            className="w-full lg:w-1/2 flex flex-col space-y-6 text-justify"
+            className="w-full lg:w-2/3 flex flex-col space-y-6 text-justify"
           >
             <div className={`p-6 md:p-8 rounded-2xl glass-card`}>
               {/* Top accent */}
               <div className={`w-12 h-1 rounded-full mb-6 bg-gradient-to-r ${darkMode ? 'from-orange-500 to-amber-400' : 'from-orange-600 to-red-500'}`} />
-              <p className={`font-outfit text-lg md:text-xl leading-loose tracking-wide ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                I architect <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500 font-bold">intelligent systems</span> that bridge advanced AI research and enterprise software engineering. As an <span className={`font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>AI Engineer</span> and <span className={`font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>Full-Stack Developer</span>, I build scalable LLM applications, automation platforms, and secure microservice ecosystems that drive operational efficiency and digital transformation. My work spans AI-driven applications, cybersecurity, RAG-based assistants, workflow automation, and cloud-native deployment—turning complex ideas into <span className={`font-semibold ${darkMode ? 'text-orange-400' : 'text-orange-600'}`}>measurable business impact</span>.
-              </p>
-            </div>
-
-            <div className="flex justify-center lg:justify-start">
+              
+              <div className={`font-outfit text-sm md:text-base leading-relaxed flex flex-col gap-4 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                <p>
+                  I am an <span className={`font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>AI Engineer</span> and <span className={`font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>Full-Stack Developer</span> specializing in building intelligent, scalable systems that apply Gen AI, LLMs, RAG, NLP, backend engineering, and cloud-native microservices to real-world problems. I have experience developing AI-powered cybersecurity solutions, multilingual AI assistants, automation platforms, and high-performance backend services, with a focus on reliability, efficiency, and production deployment. I also bring leadership experience in guiding technical teams, contributing to system architecture, and mentoring developers to deliver quality outcomes. I hold a <span className={`font-semibold ${darkMode ? 'text-orange-400' : 'text-orange-600'}`}>MSc in Computer Engineering</span> from Addis Ababa Science and Technology University, awarded a fast-track scholarship for outstanding undergraduate performance. My academic and research work includes four journal publications and three conference papers, along with a Best Research Paper award. Additionally, I served as an AI Trainer with UNDP, where I delivered hands-on training on modern AI systems and supported participants in building end-to-end AI solutions.
+                </p>
+              </div>
             </div>
           </div>
         </div>
