@@ -3,7 +3,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaImage, FaVideo, FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import { fetchResource } from "../../api";
 import image from "../../assets/fraud1.png";
 import credit1 from "../../assets/credit1.png";
 import credit2 from "../../assets/credit2.png";
@@ -16,45 +15,11 @@ import llm1 from "../../assets/llm.png";
 import llm2 from "../../assets/dashboard.png"
 import llm3 from "../../assets/llm rag flow.png"
 import llm4 from "../../assets/airflow.png"
+
 import kgat from "../../assets/workflow.png";
 import kgat2 from "../../assets/workflow1.png"
 import kgat3 from "../../assets/workflow2.png"
 import kgat4 from "../../assets/workflow3.png"
-
-const fallbackProjects = [
-    {
-      id: 1, title: "Fraud Detection System",
-      description: "Fraud detection for E-Commerce and Banking Transactions",
-      video: "https://www.youtube.com/embed/d9EqK4NxlhM",
-      github: "https://github.com/Getachew0557/fraud-detection-ecommerce-banking.git",
-      live: "https://frauddetection.vercel.app/",
-      images: [fraud1, fraud2, fraud3, fraud4],
-    },
-    {
-      id: 2, title: "LLM legal document assistant",
-      description: "A Retrieval-Augmented Generation application for querying legal documents",
-      video: "", github: "https://github.com/Getachew0557/LLM-legal-document-assistant.git",
-      live: "", images: [llm1, llm2, llm3, llm4]
-    },
-    {
-      id: 3, title: "Credit scoring and risk model",
-      description: "This project focuses on risk classification, credit scoring analysis, and bank loan insights",
-      video: "https://www.youtube.com/embed/PG99-7qm0XY",
-      github: "https://github.com/Getachew0557/Credit-Score-Classifications.git",
-      live: "https://credit-score-classifications-1.onrender.com/",
-      images: [credit1, credit2]
-    },
-    {
-      id: 4, title: "Dev Assistant AI Agent", description: "Dev Assistant AI Agent",
-      video: "", github: "https://github.com/example/project4", live: "", images: [image4],
-    },
-    {
-      id: 5, title: "AI based Book Recomndation System", description: "KGAT book recommendation system",
-      video: "", github: "https://github.com/Getachew0557/Knowledge-Graph-Attention-Network-Based-Book-Recommendation-System.git",
-      live: "https://getachew0557-knowledge-graph-attention-network-based-app-q5zdkw.streamlit.app/",
-      images: [kgat, kgat2, kgat3, kgat4],
-    },
-];
 
 // Auto-cycling image slideshow with video-like Ken Burns effect
 function ProjectImageSlider({ images, alt }) {
@@ -132,15 +97,61 @@ function ProjectImageSlider({ images, alt }) {
 }
 
 export default function Projects({ darkMode }) {
-  const [listProjects, setListProjects] = useState(fallbackProjects);
   const [activeModal, setActiveModal] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  useEffect(() => {
-    fetchResource('projects').then(data => {
-      if (data && data.length > 0) setListProjects(data)
-    })
-  }, []);
+  const listProjects = [
+    {
+      id: 1,
+      image: image,
+      title: "Fraud Detection System",
+      description: "Fraud detection for E-Commerce and Banking Transactions",
+      video: "https://www.youtube.com/embed/d9EqK4NxlhM",
+      github: "https://github.com/Getachew0557/fraud-detection-ecommerce-banking.git",
+      live: "https://frauddetection.vercel.app/",
+      images: [fraud1, fraud2, fraud3, fraud4],
+    },
+    {
+      id: 2,
+      image: llm2,
+      title: "LLM legal document assistant",
+      description: "A Retrieval-Augmented Generation application for querying legal documents",
+      video: "https://www.youtube.com/embed/EXAMPLE_VIDEO_ID",
+      github: "https://github.com/Getachew0557/LLM-legal-document-assistant.git",
+      live: "https://example.com/project2",
+      images: [llm1, llm2, llm3, llm4]
+    },
+    {
+      id: 3,
+      image: credit1,
+      title: "Credit scoring and risk model",
+      description: " This project focuses on risk classification, credit scoring analysis, and bank loan insights",
+      video: "https://www.youtube.com/embed/PG99-7qm0XY",
+      github: "https://github.com/Getachew0557/Credit-Score-Classifications.git",
+      live: "https://credit-score-classifications-1.onrender.com/",
+      images: [credit1, credit2]
+    },
+    {
+      id: 4,
+      image: image4,
+      title: "Dev Assistant AI Agent",
+      description: "Dev Assistant AI Agent",
+      video: "https://www.youtube.com/embed/EXAMPLE_VIDEO_ID",
+      github: "https://github.com/example/project4",
+      live: "https://example.com/project4",
+      images: [image4],
+    },
+    {
+      id: 5,
+      image: kgat,
+      title: "AI based Book Recomndation System",
+      description: "KGAT book recommendation system",
+      video: "https://www.youtube.com/embed/EXAMPLE_VIDEO_ID",
+      github: "https://github.com/Getachew0557/Knowledge-Graph-Attention-Network-Based-Book-Recommendation-System.git",
+      live: "https://getachew0557-knowledge-graph-attention-network-based-app-q5zdkw.streamlit.app/",
+      images: [kgat, kgat2, kgat3, kgat4],
+    },
+  ];
 
 
   const settings = {

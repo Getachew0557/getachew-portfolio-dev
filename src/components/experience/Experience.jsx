@@ -1,46 +1,62 @@
 import React from 'react';
 import img_experience from '../../assets/img_experience.png';
 import { FaShieldAlt, FaRobot, FaCogs, FaCode } from 'react-icons/fa';
-import { fetchResource } from '../../api';
 
 export default function Experience({ darkMode }) {
   const [expandedIndices, setExpandedIndices] = React.useState({});
-  const [experiences, setExperiences] = React.useState([
-    {
-      title: "AI Engineer | Software Developer",
-      company: "Information Network Security Administration",
-      date: "April 2023 – Present", location: "Addis Ababa", icon: <FaShieldAlt />,
-      tasks: ["Architected AI-powered Antivirus, IDS, and WAF systems for real-time threat detection.","Built a multilingual legal RAG chatbot and scalable microservices for HR automation.","Engineered backend inference APIs, Docker deployments, and CI/CD MLOps pipelines.","Led engineering teams and mentored junior AI developers to maximize delivery efficiency."]
-    },
-    {
-      title: "AI Engineer", company: "Afri Software Solutions",
-      date: "Nov 2024 – Present", location: "Addis Ababa", icon: <FaCode />,
-      tasks: ["Developed KcartBot, a Multilingual RAG Assistant for Agri-Commerce recommendations.","Engineered an AI-powered Intelligent Pricing engine using LLMs and vector embeddings."]
-    },
-    {
-      title: "Agentic AI Trainer", company: "UNDP",
-      date: "Sept 2025 – Feb 2026", location: "Addis Ababa", icon: <FaRobot />,
-      tasks: ["Designed hands-on Agentic AI and LLM training programs bridging theory and practice.","Guided participants to build end-to-end multi-agent AI solutions and RAG architectures.","Mentored teams to improve system design, code quality, and deployment readiness."]
-    },
-    {
-      title: "Junior Software Support Engineer", company: "Moti Engineering Plc",
-      date: "Dec 2022 – April 2023", location: "Addis Ababa", icon: <FaCogs />,
-      tasks: ["Built a Voice Guidance application with automated Text-to-Speech functionality.","Resolved technical issues in customer systems to enhance overall reliability."]
-    }
-  ]);
-
-  React.useEffect(() => {
-    fetchResource('experiences').then(data => {
-      if (data && data.length > 0) {
-        const iconMap = { 0: <FaShieldAlt />, 1: <FaCode />, 2: <FaRobot />, 3: <FaCogs /> }
-        setExperiences(data.map((e, i) => ({ ...e, icon: iconMap[i] || <FaCode /> })))
-      }
-    })
-  }, []);
-
   const toggleExpand = (index) => {
     setExpandedIndices((prev) => ({ ...prev, [index]: !prev[index] }));
   };
+
+  const experiences = [
+    {
+      title: "AI Engineer | Software Developer",
+      company: "Information Network Security Administration",
+      date: "April 2023 – Present",
+      location: "Addis Ababa",
+      icon: <FaShieldAlt />,
+      tasks: [
+        "Architected AI-powered Antivirus, IDS, and WAF systems for real-time threat detection.",
+        "Built a multilingual legal RAG chatbot and scalable microservices for HR automation.",
+        "Engineered backend inference APIs, Docker deployments, and CI/CD MLOps pipelines.",
+        "Led engineering teams and mentored junior AI developers to maximize delivery efficiency."
+      ]
+    },
+    {
+      title: "AI Engineer",
+      company: "Afri Software Solutions",
+      date: "Nov 2024 – Present",
+      location: "Addis Ababa",
+      icon: <FaCode />,
+      tasks: [
+        "Developed KcartBot, a Multilingual RAG Assistant for Agri-Commerce recommendations.",
+        "Engineered an AI-powered Intelligent Pricing engine using LLMs and vector embeddings."
+      ]
+    },
+    {
+      title: "Agentic AI Trainer",
+      company: "UNDP",
+      date: "Sept 2025 – Feb 2026",
+      location: "Addis Ababa",
+      icon: <FaRobot />,
+      tasks: [
+        "Designed hands-on Agentic AI and LLM training programs bridging theory and practice.",
+        "Guided participants to build end-to-end multi-agent AI solutions and RAG architectures.",
+        "Mentored teams to improve system design, code quality, and deployment readiness."
+      ]
+    },
+    {
+      title: "Junior Software Support Engineer",
+      company: "Moti Engineering Plc",
+      date: "Dec 2022 – April 2023",
+      location: "Addis Ababa",
+      icon: <FaCogs />,
+      tasks: [
+        "Built a Voice Guidance application with automated Text-to-Speech functionality.",
+        "Resolved technical issues in customer systems to enhance overall reliability."
+      ]
+    }
+  ];
 
   return (
     <section
