@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://getachew.vercel.app/sitemap.xml
