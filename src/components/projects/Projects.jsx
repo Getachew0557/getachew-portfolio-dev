@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -20,6 +20,81 @@ import kgat from "../../assets/workflow.png";
 import kgat2 from "../../assets/workflow1.png"
 import kgat3 from "../../assets/workflow2.png"
 import kgat4 from "../../assets/workflow3.png"
+
+// Auto-cycling image slideshow with video-like Ken Burns effect
+function ProjectImageSlider({ images, alt }) {
+  const [current, setCurrent] = useState(0);
+  const [prev, setPrev] = useState(null);
+  const [transitioning, setTransitioning] = useState(false);
+  const timerRef = useRef(null);
+
+  useEffect(() => {
+    if (!images || images.length <= 1) return;
+    timerRef.current = setInterval(() => {
+      setTransitioning(true);
+      setTimeout(() => {
+        setPrev(current);
+        setCurrent(c => (c + 1) % images.length);
+        setTransitioning(false);
+      }, 800);
+    }, 3000);
+    return () => clearInterval(timerRef.current);
+  }, [images, current]);
+
+  if (!images || images.length === 0) return null;
+
+  return (
+    <div className="relative w-full h-48 sm:h-56 md:h-64 overflow-hidden bg-black">
+
+      {/* Previous image fading out */}
+      {prev !== null && transitioning && (
+        <img
+          src={images[prev]}
+          alt={alt}
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          style={{ opacity: 0, transition: 'opacity 0.8s ease-in-out', animation: 'kenburns-out 3.8s ease-in-out forwards' }}
+        />
+      )}
+
+      {/* Current image with Ken Burns zoom */}
+      <img
+        key={current}
+        src={images[current]}
+        alt={alt}
+        className="absolute inset-0 w-full h-full object-cover object-center"
+        style={{
+          opacity: transitioning ? 0 : 1,
+          transition: 'opacity 0.8s ease-in-out',
+          animation: `kenburns-${current % 3 === 0 ? 'zoom' : current % 3 === 1 ? 'pan-right' : 'pan-left'} 3.8s ease-in-out forwards`
+        }}
+      />
+
+      {/* Cinematic dark gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/10 pointer-events-none" />
+
+      {/* Dot indicators */}
+      {images.length > 1 && (
+        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+          {images.map((_, i) => (
+            <span
+              key={i}
+              className={`block rounded-full transition-all duration-500 ${i === current ? 'w-5 h-1.5 bg-white' : 'w-1.5 h-1.5 bg-white/40'}`}
+            />
+          ))}
+        </div>
+      )}
+
+      {/* Progress bar like a video */}
+      <div className="absolute bottom-0 left-0 w-full h-0.5 bg-white/10 z-10">
+        <div
+          key={current}
+          className="h-full bg-white/70"
+          style={{ animation: 'progress-bar 3s linear forwards' }}
+        />
+      </div>
+    </div>
+  );
+}
 
 export default function Projects({ darkMode }) {
   const [activeModal, setActiveModal] = useState(null);
@@ -61,19 +136,20 @@ export default function Projects({ darkMode }) {
       image: image4,
       title: "Dev Assistant AI Agent",
       description: "Dev Assistant AI Agent",
-      video: "https://www.youtube.com/embed/EXAMPLE_VIDEO_ID", // Replace with real video link
+      video: "https://www.youtube.com/embed/EXAMPLE_VIDEO_ID",
       github: "https://github.com/example/project4",
       live: "https://example.com/project4",
+      images: [image4],
     },
-
     {
       id: 5,
       image: kgat,
       title: "AI based Book Recomndation System",
       description: "KGAT book recommendation system",
-      video: "https://www.youtube.com/embed/EXAMPLE_VIDEO_ID", // Replace with real video link
+      video: "https://www.youtube.com/embed/EXAMPLE_VIDEO_ID",
       github: "https://github.com/Getachew0557/Knowledge-Graph-Attention-Network-Based-Book-Recommendation-System.git",
       live: "https://getachew0557-knowledge-graph-attention-network-based-app-q5zdkw.streamlit.app/",
+      images: [kgat, kgat2, kgat3, kgat4],
     },
   ];
 
@@ -118,7 +194,7 @@ export default function Projects({ darkMode }) {
       data-aos="fade-up"
       data-aos-delay="400"
       id="projects"
-      className={`relative overflow-hidden flex flex-col body-font transition-colors duration-300 ${darkMode ? 'bg-gray-900 text-gray-100' : 'bg-gray-50 text-gray-900'}`}
+      className={`relative overflow-hidden flex flex-col body-font transition-colors duration-300 ${darkMode ? 'bg-gray-900/60 text-gray-100' : 'bg-gray-50/60 text-gray-900'}`}
     >
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="blob-float absolute top-20 -right-20 w-96 h-96 rounded-full blur-3xl opacity-15 bg-gradient-to-bl from-violet-600 to-indigo-500" />
@@ -137,10 +213,9 @@ export default function Projects({ darkMode }) {
           {listProjects.map((project) => (
             <div key={project.id} className="p-4 relative group">
               <div className={`h-full flex flex-col transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl rounded-2xl overflow-hidden glass-card`}>
-                <img
-                  src={project.image}
+                <ProjectImageSlider
+                  images={project.images || [project.image]}
                   alt={project.title}
-                  className="w-full h-48 sm:h-56 md:h-64 object-cover object-center transition-all duration-300 group-hover:scale-110"
                 />
                 <div className="p-6 flex-grow flex flex-col justify-start">
                   <h2 className={`font-outfit tracking-widest text-xl font-bold mb-2 line-clamp-1 ${darkMode ? 'text-gray-100' : 'text-gray-900'}`}>
@@ -188,54 +263,82 @@ export default function Projects({ darkMode }) {
 
       {/* Modal for Image or Video */}
       {activeModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
-          <div className="relative bg-gray-800 rounded-lg p-6 w-full max-w-4xl">
-            <button
-              className="absolute top-2 right-2 text-white text-xl"
-              onClick={handleModalClose}
-            >
-              ✖
-            </button>
-            {activeModal.type === "image" ? (
-              <div className="flex flex-col items-center">
-                <img
-                  src={
-                    activeModal.project.images
-                      ? activeModal.project.images[currentImageIndex]
-                      : activeModal.project.image
-                  }
-                  alt={activeModal.project.title}
-                  className="max-w-full max-h-[80vh] rounded-lg"
-                />
-                {activeModal.project.images && (
-                  <div className="flex justify-between w-full mt-4">
-                    <button
-                      className="text-white text-xl px-4 py-2 bg-orange-500 rounded hover:bg-orange-600"
-                      onClick={handlePreviousImage}
-                    >
-                      Previous
-                    </button>
-                    <button
-                      className="text-white text-xl px-4 py-2 bg-orange-500 rounded hover:bg-orange-600"
-                      onClick={handleNextImage}
-                    >
-                      Next
-                    </button>
+        <div
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm flex justify-center items-center z-50 p-4"
+          onClick={handleModalClose}
+        >
+          <div
+            className="relative bg-gray-900/95 backdrop-blur-xl border border-white/10 rounded-2xl w-full max-w-3xl mx-auto shadow-2xl"
+            onClick={e => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="flex items-center justify-between px-5 py-4 border-b border-white/10">
+              <h3 className="text-white font-semibold text-base sm:text-lg truncate pr-4">
+                {activeModal.project.title}
+              </h3>
+              <button
+                className="text-white/50 hover:text-white text-lg transition-colors flex-shrink-0"
+                onClick={handleModalClose}
+              >
+                ✕
+              </button>
+            </div>
+
+            {/* Modal Body */}
+            <div className="p-4 sm:p-6">
+              {activeModal.type === "image" ? (
+                <div className="flex flex-col items-center gap-4">
+                  {/* Strict fixed 16:9 frame — uniform for ALL images */}
+                  <div
+                    className="w-full rounded-xl overflow-hidden bg-gray-800"
+                    style={{ aspectRatio: '16/9' }}
+                  >
+                    <img
+                      key={currentImageIndex}
+                      src={activeModal.project.images
+                        ? activeModal.project.images[currentImageIndex]
+                        : activeModal.project.image}
+                      alt={activeModal.project.title}
+                      className="w-full h-full object-contain"
+                      style={{ display: 'block' }}
+                    />
                   </div>
-                )}
-              </div>
-            ) : (
-              <div className="relative w-full h-0" style={{ paddingBottom: "56.25%" }}>
-                <iframe
-                  src={activeModal.project.video}
-                  title={activeModal.project.title}
-                  className="absolute top-0 left-0 w-full h-full rounded-lg"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            )}
+
+                  {/* Navigation */}
+                  {activeModal.project.images && activeModal.project.images.length > 1 && (
+                    <div className="flex items-center justify-between w-full gap-3">
+                      <button
+                        onClick={handlePreviousImage}
+                        className="flex-1 py-2.5 px-4 rounded-xl text-white text-sm font-semibold bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-orange-500/20"
+                      >
+                        ← Prev
+                      </button>
+                      <span className="text-white/50 text-xs whitespace-nowrap">
+                        {currentImageIndex + 1} / {activeModal.project.images.length}
+                      </span>
+                      <button
+                        onClick={handleNextImage}
+                        className="flex-1 py-2.5 px-4 rounded-xl text-white text-sm font-semibold bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-orange-500/20"
+                      >
+                        Next →
+                      </button>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                /* Video — same 16:9 ratio */
+                <div className="w-full rounded-xl overflow-hidden" style={{ aspectRatio: '16/9' }}>
+                  <iframe
+                    src={activeModal.project.video}
+                    title={activeModal.project.title}
+                    className="w-full h-full"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              )}
+            </div>
           </div>
         </div>
       )}

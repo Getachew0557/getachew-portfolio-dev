@@ -17,8 +17,9 @@ export default function Hero({ darkMode, toggleDarkMode }) {
     'Data Scientist',
     'Full Stack Developer',
     'Academic Researcher',
+    'Computer Engineer',
   ];
-  let currentProfessionIndex = 0;
+  const currentProfessionIndex = React.useRef(0);
 
   useEffect(() => {
     const typeProfession = () => {
@@ -26,11 +27,11 @@ export default function Hero({ darkMode, toggleDarkMode }) {
       let index = 0;
 
       const typingInterval = setInterval(() => {
-        currentText += professions[currentProfessionIndex].charAt(index);
+        currentText += professions[currentProfessionIndex.current].charAt(index);
         setText(currentText);
         index++;
 
-        if (index === professions[currentProfessionIndex].length) {
+        if (index === professions[currentProfessionIndex.current].length) {
           clearInterval(typingInterval);
           setTimeout(() => {
             const eraseInterval = setInterval(() => {
@@ -39,8 +40,8 @@ export default function Hero({ darkMode, toggleDarkMode }) {
 
               if (currentText.length === 0) {
                 clearInterval(eraseInterval);
-                currentProfessionIndex =
-                  (currentProfessionIndex + 1) % professions.length;
+                currentProfessionIndex.current =
+                  (currentProfessionIndex.current + 1) % professions.length;
                 typeProfession();
               }
             }, 50);
@@ -56,7 +57,7 @@ export default function Hero({ darkMode, toggleDarkMode }) {
     <section
       id="home"
       className={`relative overflow-hidden min-h-screen transition-colors duration-300 flex flex-col
-        ${darkMode ? 'bg-gray-900' : 'bg-gray-50'}`}
+        ${darkMode ? 'bg-gray-900/80' : 'bg-gray-50/80'}`}
     >
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className={`blob-float absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full blur-3xl opacity-30 ${darkMode ? 'bg-gradient-to-bl from-violet-600 via-indigo-500 to-cyan-400' : 'bg-gradient-to-bl from-violet-500 via-indigo-400 to-cyan-300'}`} />

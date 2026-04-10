@@ -94,7 +94,7 @@ export default function Education({ darkMode }) {
   return (
     <section
       id="education"
-      className={`relative overflow-hidden flex flex-col py-12 md:py-24 px-4 sm:px-6 lg:px-8 transition-colors duration-300 ${darkMode ? 'bg-gray-900 text-gray-100' : 'bg-gray-50 text-gray-900'
+      className={`relative overflow-hidden flex flex-col py-12 md:py-24 px-4 sm:px-6 lg:px-8 transition-colors duration-300 ${darkMode ? 'bg-gray-900/60 text-gray-100' : 'bg-gray-50/60 text-gray-900'
         }`}
     >
       {/* Glassmorphism mesh blobs */}

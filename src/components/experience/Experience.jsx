@@ -62,7 +62,7 @@ export default function Experience({ darkMode }) {
     <section
       id='experience'
       className={`relative overflow-hidden flex flex-col py-10 md:py-16 transition-colors duration-300 ${
-        darkMode ? 'bg-gray-900 text-gray-100' : 'bg-gray-50 text-gray-900'
+        darkMode ? 'bg-gray-900/60 text-gray-100' : 'bg-gray-50/60 text-gray-900'
       }`}
     >
       {/* Glassmorphism mesh blobs */}

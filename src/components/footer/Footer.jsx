@@ -14,11 +14,11 @@ export default function Footer({ darkMode }) {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className={`relative transition-colors duration-300 ${darkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
+        <footer className={`relative transition-colors duration-300 ${darkMode ? 'bg-gray-900/80' : 'bg-gray-50/80'}`}>
             {/* Gradient separator line */}
             <div className="h-px w-full bg-gradient-to-r from-transparent via-indigo-500/40 to-transparent" />
 
-            <div className={`backdrop-blur-xl border-t transition-colors duration-300 ${darkMode ? 'border-gray-700/50 bg-gray-900/80' : 'border-gray-200/50 bg-white/60'}`}>
+            <div className={`backdrop-blur-xl border-t transition-colors duration-300 ${darkMode ? 'border-gray-700/30 bg-gray-900/50' : 'border-gray-200/30 bg-white/40'}`}>
                 <div className="container mx-auto max-w-screen-xl px-4 py-6 md:flex md:items-center md:justify-between">
                     <span className={`text-sm sm:text-center ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
                         © {currentYear}{' '}

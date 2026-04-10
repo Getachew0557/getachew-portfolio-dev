@@ -57,7 +57,7 @@ export default function Skills({ darkMode }) {
   return (
     <section
       id="skills"
-      className={`relative overflow-hidden flex flex-col py-12 md:py-24 transition-colors duration-300 ${darkMode ? 'bg-gray-900 text-gray-100' : 'bg-gray-50 text-gray-900'
+      className={`relative overflow-hidden flex flex-col py-12 md:py-24 transition-colors duration-300 ${darkMode ? 'bg-gray-900/60 text-gray-100' : 'bg-gray-50/60 text-gray-900'
         }`}
     >
       {/* Glassmorphism mesh blobs */}

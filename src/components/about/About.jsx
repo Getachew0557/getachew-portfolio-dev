@@ -3,7 +3,7 @@ import aboutImage from '../../assets/icon.png';
 
 export default function About({ darkMode }) {
   return (
-    <section id="about" className={`relative overflow-hidden flex flex-col py-12 md:py-24 transition-colors duration-300 ${darkMode ? 'bg-gray-900 text-gray-100' : 'bg-gray-50 text-gray-900'}`}>
+    <section id="about" className={`relative overflow-hidden flex flex-col py-12 md:py-24 transition-colors duration-300 ${darkMode ? 'bg-gray-900/60 text-gray-100' : 'bg-gray-50/60 text-gray-900'}`}>
       {/* Glassmorphism mesh blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className={`blob-float absolute -top-32 -left-32 w-96 h-96 rounded-full blur-3xl opacity-30 ${darkMode ? 'bg-gradient-to-br from-violet-600 to-indigo-500' : 'bg-gradient-to-br from-violet-500 to-indigo-400'}`} />
@@ -56,7 +56,7 @@ export default function About({ darkMode }) {
               
               <div className={`font-outfit text-base md:text-lg leading-relaxed flex flex-col gap-6 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
                 <p>
-                  I am an <span className={`font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>AI Engineer</span> and <span className={`font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>Full-Stack Developer</span> with a passion for building intelligent systems that solve real-world problems — from AI-powered cybersecurity tools to multilingual assistants and automation platforms. I focus on delivering reliable, production-ready solutions with clean architecture and strong engineering practices.
+                  I am an <span className={`font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>AI Engineer</span>, <span className={`font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>Full-Stack Developer</span>, and <span className={`font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>Academic Researcher</span> with a passion for building intelligent systems that solve real-world problems — from AI-powered cybersecurity tools to multilingual assistants and automation platforms. I focus on delivering reliable, production-ready solutions with clean architecture and strong engineering practices.
                 </p>
                 <p>
                   I hold a <span className={`font-semibold ${darkMode ? 'text-orange-400' : 'text-orange-600'}`}>MSc in Computer Engineering</span> from Addis Ababa Science and Technology University, earned through a fast-track scholarship. My research spans four journal publications, three conference papers, and a Best Research Paper award. I also served as an <span className={`font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>AI Trainer with UNDP</span>, leading hands-on training on modern AI systems.
