@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 
 .env
+portfolio-admin/backend/.env
+portfolio-admin/frontend/.env
+dump/
