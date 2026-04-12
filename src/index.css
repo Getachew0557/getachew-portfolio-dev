@@ -122,3 +122,9 @@ html {
     0%   { width: 0%; }
     100% { width: 100%; }
 }
+
+/* Navbar active underline — left to right slide */
+@keyframes underline-slide {
+    from { width: 0; opacity: 0; }
+    to   { width: 100%; opacity: 1; }
+}

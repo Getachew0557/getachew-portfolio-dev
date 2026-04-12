@@ -4,21 +4,37 @@ import React, { useState, useEffect } from 'react'
 export default function Navbar({ darkMode, toggleDarkMode }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [activeSection, setActiveSection] = useState('home')
 
   const navItems = [
-    { name: 'Home', link: '#home' },
-    { name: 'About', link: '#about' },
-    { name: 'Skills', link: '#skills' },
+    { name: 'Home',       link: '#home' },
+    { name: 'About',      link: '#about' },
+    { name: 'Skills',     link: '#skills' },
     { name: 'Experience', link: '#experience' },
-    { name: 'Education', link: '#education' },
-    { name: 'Projects', link: '#projects' },
-    { name: 'Blog', link: '#blog' },
-    { name: 'Contact', link: '#contact' },
+    { name: 'Education',  link: '#education' },
+    { name: 'Projects',   link: '#projects' },
+    { name: 'Blog',       link: '#blog' },
+    { name: 'Contact',    link: '#contact' },
   ]
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50)
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50)
+      const sections = navItems.map(i => i.link.replace('#', ''))
+      let current = 'home'
+      sections.forEach(id => {
+        const el = document.getElementById(id)
+        if (el) {
+          const rect = el.getBoundingClientRect()
+          if (rect.top <= 150 && rect.bottom >= 150) {
+            current = id
+          }
+        }
+      })
+      setActiveSection(current)
+    }
     window.addEventListener('scroll', handleScroll)
+    handleScroll()
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
@@ -44,19 +60,28 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-6">
             <nav className="flex gap-1">
-              {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.link}
-                  className={`font-outfit text-base md:text-sm font-medium px-3 py-1.5 rounded-lg transition-all duration-200
-                    ${darkMode
-                      ? 'text-gray-300 hover:text-orange-400 hover:bg-gray-800/80'
-                      : 'text-gray-600 hover:text-orange-600 hover:bg-orange-50'
-                    }`}
-                >
-                  {item.name}
-                </a>
-              ))}
+              {navItems.map((item) => {
+                const isActive = activeSection === item.link.replace('#', '')
+                return (
+                  <a
+                    key={item.name}
+                    href={item.link}
+                    className={`relative font-outfit text-xs font-bold tracking-widest uppercase px-3 py-2 transition-all duration-200 group`}
+                  >
+                    <span className={`transition-colors duration-200 ${
+                      isActive
+                        ? darkMode ? 'text-gray-100' : 'text-gray-900'
+                        : darkMode ? 'text-gray-400 hover:text-gray-200' : 'text-gray-400 hover:text-gray-700'
+                    }`}>
+                      {item.name}
+                    </span>
+                    {/* Active amber underline — animates left to right */}
+                    <span className={`absolute bottom-0 left-3 h-0.5 rounded-full bg-amber-500 transition-all duration-500 ease-out ${
+                      isActive ? 'w-[calc(100%-24px)] opacity-100' : 'w-0 opacity-0'
+                    }`} />
+                  </a>
+                )
+              })}
             </nav>
 
             {/* Dark Mode Toggle */}
@@ -129,20 +154,24 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
             <div className={`mx-6 h-px ${darkMode ? 'bg-gray-700/60' : 'bg-gray-200/60'}`} />
 
             <nav className="flex flex-col gap-1 px-4 pt-6 flex-grow">
-              {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.link}
-                  className={`py-3 px-4 rounded-xl font-outfit font-medium text-base transition-all duration-200
-                    ${darkMode
-                      ? 'text-gray-300 hover:text-orange-400 hover:bg-gray-800/80'
-                      : 'text-gray-700 hover:text-orange-600 hover:bg-orange-50'
-                    }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </a>
-              ))}
+              {navItems.map((item) => {
+                const isActive = activeSection === item.link.replace('#', '')
+                return (
+                  <a
+                    key={item.name}
+                    href={item.link}
+                    className={`py-3 px-4 font-outfit font-bold text-xs tracking-widest uppercase transition-all duration-200 flex items-center justify-between
+                      ${isActive
+                        ? darkMode ? 'text-gray-100' : 'text-gray-900'
+                        : darkMode ? 'text-gray-400 hover:text-gray-200' : 'text-gray-400 hover:text-gray-700'
+                      }`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                    {isActive && <span className="w-6 h-0.5 rounded-full bg-amber-500" />}
+                  </a>
+                )
+              })}
             </nav>
 
             <div className="px-4 pb-6">
